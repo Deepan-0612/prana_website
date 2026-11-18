@@ -77,7 +77,7 @@ async function boot() {
     scrollEffects();                       // set up while the intro plays (the page is hidden behind it)
     await intro.play(heroIn);              // resolves once the logo has landed in the nav
   } catch (err) {
-    console.warn('[Prāṇa] Intro skipped:', err && err.message ? err.message : err);
+    console.warn('[Prana] Intro skipped:', err && err.message ? err.message : err);
     scrollEffects();
     heroIn();
   } finally {

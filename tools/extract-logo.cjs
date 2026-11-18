@@ -2,7 +2,7 @@
  * Regenerates the logo assets from assets/logo/Prana_Logo_with_Name.pdf
  *   assets/logo/mark.png        lotus mark, transparent, exact colours (for light backgrounds)
  *   assets/logo/mark-dark.png   lotus mark keyed for dark backgrounds (keeps the pale highlights)
- *   assets/logo/wordmark.svg    the "Prāṇa" lettering as vector, brand lavender
+ *   assets/logo/wordmark.svg    the "Prana" lettering as vector, brand lavender
  *   assets/logo/wordmark-sprite.txt   <symbol> + glyph defs to paste inline in index.html
  *
  * Needs: poppler (pdfimages, pdftocairo), rsvg-convert, and the `sharp` module.
@@ -27,7 +27,7 @@ const BRAND = '#C687E3';
   execFileSync('pdftocairo', ['-svg', PDF, svgPath]);
   const svg = fs.readFileSync(svgPath, 'utf8');
 
-  // The PDF places the raster with a clip box that cuts off the small sans-serif "Prāṇa" baked into the
+  // The PDF places the raster with a clip box that cuts off the small sans-serif "Prana" baked into the
   // bottom of the bitmap. Honour the same clip so only the lotus survives.
   const place = svg.match(/<use xlink:href="#source-6" transform="matrix\(([\d.]+), 0, 0, ([\d.]+), ([\d.]+), ([\d.]+)\)"/);
   const clipD = svg.match(/<clipPath id="clip-2">\s*<path[^>]* d="([^"]+)"/);
@@ -102,7 +102,7 @@ const BRAND = '#C687E3';
   console.log('wordmark viewBox', vbStr, 'aspect', (vb.w / vb.h).toFixed(4));
 
   fs.writeFileSync(path.join(OUT, 'wordmark.svg'),
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vbStr}" role="img" aria-label="Prāṇa"><defs>${defs}${clip}</defs>${body(BRAND)}</svg>\n`);
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vbStr}" role="img" aria-label="Prana"><defs>${defs}${clip}</defs>${body(BRAND)}</svg>\n`);
   fs.writeFileSync(path.join(OUT, 'wordmark-sprite.txt'),
     `<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>${defs}${clip}<symbol id="prana-wordmark" viewBox="${vbStr}">${body('currentColor')}</symbol></defs></svg>\n` +
     `<!-- viewBox ${vbStr}  aspect ${(vb.w / vb.h).toFixed(4)} -->\n`);

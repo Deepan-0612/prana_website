@@ -1,6 +1,6 @@
 
 /*
- * Prāṇa intro — the original SVG wordmark writes on glyph-by-glyph.
+ * Prana intro — the original SVG wordmark writes on glyph-by-glyph.
  * It stays centred, fades away, and then the lotus mark appears.
  * Only the lotus mark travels directly into the top-left navigation slot.
  *

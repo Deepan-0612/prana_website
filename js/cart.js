@@ -1,5 +1,5 @@
 /*
- * Prāṇa Cart & WhatsApp Checkout System (Self-initializing, no module dependency required)
+ * Prana Cart & WhatsApp Checkout System (Self-initializing, no module dependency required)
  */
 
 (function () {
@@ -192,7 +192,7 @@
         return;
       }
 
-      let msg = '*Namaste Prāṇa Team!* 🙏\nI would like to place an order from your website:\n\n';
+      let msg = '*Namaste Prana Team!* 🙏\nI would like to place an order from your website:\n\n';
       this.items.forEach((item, idx) => {
         const lineTotal = item.price * item.qty;
         msg += (idx + 1) + '. *' + item.title + '*\n   Qty: ' + item.qty + ' × ₹' + item.price.toLocaleString('en-IN') + ' = ₹' + lineTotal.toLocaleString('en-IN') + '\n';
@@ -267,7 +267,7 @@
           e.stopPropagation();
           const title = buyNowBtn.dataset.productTitle;
           const price = buyNowBtn.dataset.productPrice;
-          const msg = '*Namaste Prāṇa Team!* 🙏\nI would like to order:\n\n*Product:* ' + title + '\n*Price:* ₹' + Number(price).toLocaleString('en-IN') + '\n*Delivery:* Free Standard Shipping\n\nPlease confirm availability and payment details!';
+          const msg = '*Namaste Prana Team!* 🙏\nI would like to order:\n\n*Product:* ' + title + '\n*Price:* ₹' + Number(price).toLocaleString('en-IN') + '\n*Delivery:* Free Standard Shipping\n\nPlease confirm availability and payment details!';
           const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
           window.open(url, '_blank');
           return;

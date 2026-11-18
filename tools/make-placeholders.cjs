@@ -224,15 +224,15 @@ const jobs = [
   ['hero.webp', () => braceletScene({ bg: IVORY, glow: '#ffffff', pick: palettes.jade, seed: 11, count: 21, rBase: 46, tilt: -16, rxF: 0.3, ryF: 0.2, focalIdx: 0, focal: { base: '#e9e6dc', kind: 'moon' } })],
   ['signature.webp', () => braceletScene({ bg: FOREST, glow: '#c9a961', pick: palettes.moon, seed: 21, count: 20, rBase: 46, tilt: 12, spacer: '#d3b36b', focalIdx: 0, focal: { base: '#2c6a52' } })],
   // products
-  ['product-sage-jade.webp', () => braceletScene({ bg: SAGE, glow: '#f4f1e2', pick: palettes.jade, seed: 31, tilt: -12 })],
-  ['product-moonstone.webp', () => braceletScene({ bg: IVORY, glow: '#ffffff', pick: palettes.moon, seed: 32, tilt: 10, spacer: '#d3b36b' })],
+  ['Prana calm bracelets.webp', () => braceletScene({ bg: SAGE, glow: '#f4f1e2', pick: palettes.jade, seed: 31, tilt: -12 })],
+  ['moonstone bracelet.webp', () => braceletScene({ bg: IVORY, glow: '#ffffff', pick: palettes.moon, seed: 32, tilt: 10, spacer: '#d3b36b' })],
   ['product-tigers-eye.webp', () => braceletScene({ bg: FOREST, glow: '#b8985a', pick: palettes.tiger, seed: 33, tilt: -8, spacer: '#d9bb78' })],
-  ['product-lapis.webp', () => braceletScene({ bg: IVORY, glow: '#fff', pick: palettes.lapis, seed: 34, tilt: 14 })],
-  ['product-rose-quartz.webp', () => braceletScene({ bg: BLUSH, glow: '#fff7f2', pick: palettes.rose, seed: 35, tilt: -10, spacer: '#c9a961' })],
-  ['product-rudraksha-mala.webp', () => malaScene({ bg: SAGE, glow: '#f4f1e2', pick: palettes.rudra, seed: 36, base: '#6a4327' })],
+  ['Lapis Lazuli.jpg', () => braceletScene({ bg: IVORY, glow: '#fff', pick: palettes.lapis, seed: 34, tilt: 14 })],
+  ['Rose Quartz Bracelet.webp', () => braceletScene({ bg: BLUSH, glow: '#fff7f2', pick: palettes.rose, seed: 35, tilt: -10, spacer: '#c9a961' })],
+  ['Rudraksha.avif', () => malaScene({ bg: SAGE, glow: '#f4f1e2', pick: palettes.rudra, seed: 36, base: '#6a4327' })],
   // collection macros
   ['collection-calm.webp', () => macroScene({ bg: FOREST, glow: '#86a47f', pick: palettes.jade, seed: 41 })],
-  ['collection-courage.webp', () => macroScene({ bg: ['#3a2812', '#1a1007'], glow: '#c9893a', pick: palettes.tiger, seed: 42 })],
+  ['tiger\'s eye.jpg', () => macroScene({ bg: ['#3a2812', '#1a1007'], glow: '#c9893a', pick: palettes.tiger, seed: 42 })],
   ['collection-clarity.webp', () => macroScene({ bg: ['#1c2a4a', '#0d1426'], glow: '#6f8fd6', pick: palettes.lapis, seed: 43 })],
   ['collection-devotion.webp', () => macroScene({ bg: ['#3b2a1a', '#1c130b'], glow: '#c9a961', pick: palettes.rudra, seed: 44 })],
 ];
