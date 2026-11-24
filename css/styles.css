@@ -168,12 +168,6 @@ body::after {
 .arch { border-radius: 999px 999px 28px 28px; overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid rgba(255,255,255,.8);
   box-shadow: 0 40px 90px rgba(45,20,65,.18), 0 0 0 10px rgba(255,255,255,.35); }
 .arch img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); }
-.chip { position: absolute; padding: 14px 22px; border-radius: 18px; display: grid; gap: 2px; animation: float 7s ease-in-out infinite; }
-.chip__k { font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--forest-d); }
-.chip__v { font-family: var(--serif); font-size: 21px; line-height: 1.1; color: var(--forest-d); }
-.chip--a { left: -9%; top: 18%; }
-.chip--b { right: -7%; bottom: 14%; animation-delay: -3.2s; }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
 .hero__scroll { position: absolute; bottom: 28px; left: 50%; width: 26px; height: 44px; margin-left: -13px; border: 1px solid rgba(70,37,94,.4); border-radius: 14px; }
 .hero__scroll span { position: absolute; left: 50%; top: 8px; width: 3px; height: 8px; margin-left: -1.5px; border-radius: 2px; background: var(--gold); animation: drip 2.2s var(--ease) infinite; }
@@ -201,8 +195,9 @@ body::after {
 /* products */
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 3.4vw, 48px) clamp(16px, 2.2vw, 30px); }
 .product { display: block; }
-.product__media { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 5; background: var(--ivory-2);
-  box-shadow: 0 20px 50px rgba(45,20,65,.12); transition: transform .8s var(--ease), box-shadow .8s var(--ease); }
+.product__media { position: relative; display: block; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 5; background: var(--ivory-2);
+  box-shadow: 0 20px 50px rgba(45,20,65,.12); transition: transform .8s var(--ease), box-shadow .8s var(--ease);
+  width: 92%; margin: 0 auto; }
 .product:hover .product__media { transform: translateY(-6px); box-shadow: 0 30px 64px rgba(45,20,65,.18); }
 .product__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
 .product:hover .product__media img { transform: scale(1.05); }
@@ -332,7 +327,6 @@ body::after {
   .hero { padding: 124px 0 76px; }
   .hero__grid { grid-template-columns: 1fr; text-align: left; }
   .hero__visual { width: min(86%, 400px); order: -1; justify-self: center; margin-bottom: 8px; }
-  .chip--a { left: -6%; } .chip--b { right: -6%; }
   .hero__scroll { display: none; }
 
   .signature__grid { grid-template-columns: 1fr; }
@@ -354,7 +348,6 @@ body::after {
   .product__meta p { font-size: 12.5px; }
   .price { grid-row: auto; grid-column: 1; margin-top: 4px; font-size: 15px; }
   .tag { left: 8px; top: 8px; padding: 5px 11px; font-size: 9.5px; }
-  .chip { padding: 10px 14px; border-radius: 14px; } .chip__v { font-size: 17px; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .btn { padding: 0 26px; }
   .intro__skip { right: 14px; top: 14px; }
@@ -364,7 +357,7 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .chip, .hero__scroll span { animation: none; }
+  .hero__scroll span { animation: none; }
   * { transition-duration: .01ms !important; }
 }
 
@@ -372,6 +365,1389 @@ body::after {
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass { background: rgba(250,247,252,.92); }
   .glass--dark { background: rgba(38,20,53,.9); }
+}
+
+/* =========================================================
+   CUSTOMIZE — ATELIER CRYSTAL STUDIO (PRANA LUXURY THEME)
+   ========================================================= */
+.cz-section {
+  position: relative;
+  padding: clamp(100px, 12vw, 150px) 0 clamp(60px, 8vw, 100px);
+  background: radial-gradient(1000px 700px at 50% 35%, rgba(223, 206, 238, 0.45), transparent 70%),
+              radial-gradient(800px 600px at 10% 80%, rgba(198, 135, 227, 0.15), transparent 60%),
+              var(--ivory);
+  overflow: hidden;
+}
+
+.cz-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(36px, 5vw, 64px);
+}
+.cz-head__sub {
+  margin: 16px auto 0;
+  max-width: 38em;
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: var(--ink-2);
+}
+
+/* Master Atelier 3-Column Grid */
+.cz-studio-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 340px) minmax(520px, 1.6fr) minmax(310px, 350px);
+  gap: clamp(20px, 2.8vw, 40px);
+  align-items: start;
+}
+
+/* Studio Glass Panels */
+.cz-panel {
+  padding: 24px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65), rgba(246, 238, 252, 0.35));
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 16px 40px rgba(45, 20, 65, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+.cz-panel__header {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(70, 37, 94, 0.08);
+}
+.cz-panel__eyebrow {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.cz-panel__title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--forest-d);
+  line-height: 1.15;
+  margin: 0;
+}
+.cz-panel__hint {
+  font-size: 12.5px;
+  color: var(--ink-2);
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   FEATURED QUARTZ TRIO: AMETHYST, ROSE QUARTZ, CLEAR QUARTZ
+   ========================================================= */
+.cz-featured-trio {
+  margin-bottom: 24px;
+}
+.cz-featured-label {
+  display: block;
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--forest-d);
+  margin-bottom: 12px;
+}
+.cz-featured-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* High-End Crystal Selection Card */
+.cz-crystal-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(243, 233, 250, 0.55));
+  border: 1px solid rgba(198, 135, 227, 0.28);
+  box-shadow: 0 6px 20px rgba(45, 20, 65, 0.04);
+  cursor: pointer;
+  transition: transform 0.35s var(--ease), border-color 0.35s, box-shadow 0.35s, background 0.35s;
+  overflow: visible;
+}
+.cz-crystal-card:hover {
+  transform: translateY(-4px) scale(1.015);
+  border-color: var(--gold);
+  background: linear-gradient(135deg, #ffffff, rgba(243, 233, 250, 0.85));
+  box-shadow: 0 14px 36px rgba(70, 37, 94, 0.14), 0 0 0 1px rgba(198, 135, 227, 0.45);
+}
+.cz-crystal-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Active Selected Crystal State */
+.cz-crystal-card--selected {
+  border-color: var(--forest-d) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(230, 212, 243, 0.75)) !important;
+  box-shadow: 0 0 0 2.5px var(--forest-d), 0 12px 34px rgba(45, 20, 65, 0.18) !important;
+  transform: translateY(-3px);
+}
+.cz-crystal-card--selected .cz-crystal-card__img {
+  transform: scale(1.1) rotate(4deg);
+}
+
+.cz-crystal-card__media {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.98), rgba(235, 222, 246, 0.7));
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 20px rgba(45, 20, 65, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cz-crystal-card__img {
+  width: 92%;
+  height: 92%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.4s var(--ease), filter 0.4s;
+}
+
+.cz-crystal-card__badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: var(--forest-d);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.cz-crystal-card__info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.cz-crystal-card__name {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--forest-d);
+  margin: 0;
+  line-height: 1.18;
+}
+.cz-crystal-card__price {
+  font-size: 13px;
+  color: var(--ink-2);
+  margin-top: 4px;
+  font-weight: 400;
+}
+.cz-crystal-card__sizes {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  margin-top: 3px;
+}
+
+.cz-crystal-card__action {
+  background: rgba(70, 37, 94, 0.08);
+  border: 1px solid rgba(70, 37, 94, 0.15);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--forest-d);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.cz-crystal-card:hover .cz-crystal-card__action {
+  background: var(--forest-d);
+  color: #ffffff;
+  border-color: var(--forest-d);
+}
+
+/* =========================================================
+   SEARCH & FULL GEMSTONE LIST
+   ========================================================= */
+.cz-library-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 14px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.cz-library-divider::before,
+.cz-library-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(70, 37, 94, 0.1);
+}
+
+.cz-search-wrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+.cz-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-2);
+  pointer-events: none;
+}
+.cz-search-input {
+  width: 100%;
+  padding: 10px 14px 10px 36px;
+  border: 1px solid rgba(70, 37, 94, 0.15);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--ink);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.cz-search-input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(198, 135, 227, 0.18);
+  background: #ffffff;
+}
+
+.cz-cat-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.cz-cat {
+  padding: 5px 12px;
+  border: 1px solid rgba(70, 37, 94, 0.12);
+  border-radius: 999px;
+  font-size: 11.5px;
+  color: var(--ink-2);
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.cz-cat:hover {
+  border-color: var(--gold);
+  color: var(--forest-d);
+}
+.cz-cat--active {
+  border-color: var(--forest-d);
+  background: var(--forest-d);
+  color: #ffffff;
+}
+
+.cz-gems {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.cz-gems::-webkit-scrollbar {
+  width: 5px;
+}
+.cz-gems::-webkit-scrollbar-thumb {
+  background: rgba(198, 135, 227, 0.35);
+  border-radius: 999px;
+}
+
+.cz-gem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(70, 37, 94, 0.1);
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  text-align: center;
+}
+.cz-gem:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 20px rgba(45, 20, 65, 0.08);
+}
+.cz-gem:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.cz-gem--selected {
+  border-color: var(--forest-d) !important;
+  background: rgba(246, 238, 252, 0.9) !important;
+  box-shadow: 0 0 0 2px var(--forest-d);
+}
+.cz-gem--unavailable {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.cz-gem--in-strand {
+  border-color: rgba(70, 37, 94, 0.3);
+}
+
+.cz-gem__img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.cz-gem__swatch {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.cz-gem__meta {
+  width: 100%;
+}
+.cz-gem__name {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--forest-d);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cz-gem__price {
+  font-size: 11px;
+  color: var(--ink-2);
+  margin-top: 1px;
+}
+.cz-gem__badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--forest-d);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   CENTERPIECE: THE BRACELET ATELIER HERO PEDESTAL
+   ========================================================= */
+.cz-centerpiece {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Luxury Display Pedestal */
+.cz-pedestal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 44px) 20px 24px;
+  border-radius: 32px;
+  background: radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.85) 0%, rgba(246, 238, 252, 0.6) 65%, rgba(235, 222, 246, 0.4) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 30px 80px rgba(45, 20, 65, 0.1), inset 0 2px 0 rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+  backdrop-filter: blur(28px) saturate(150%);
+  overflow: hidden;
+}
+
+.cz-pedestal__halo {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 135, 227, 0.3) 0%, rgba(223, 206, 238, 0.08) 55%, transparent 70%);
+  filter: blur(28px);
+  pointer-events: none;
+  transition: box-shadow 0.4s ease;
+}
+
+.cz-pedestal__ring {
+  position: absolute;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  border: 1px dashed rgba(198, 135, 227, 0.25);
+  pointer-events: none;
+}
+
+/* SVG Bracelet Canvas Container */
+.cz-svg-container {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.6s var(--ease);
+}
+.cz-svg-container.is-macro {
+  transform: scale(1.22);
+}
+
+#czSvg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* 360° Continuous Luxury Rotation */
+@keyframes cz-rotate-360 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cz-bracelet-disc {
+  transform-origin: 0px 0px;
+  animation: cz-rotate-360 85s linear infinite;
+  will-change: transform;
+  cursor: grab;
+}
+.cz-bracelet-disc.is-paused {
+  animation-play-state: paused !important;
+}
+
+.cz-svg-bead {
+  transition: transform 0.25s var(--ease), opacity 0.25s ease;
+}
+.cz-svg-bead:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(198, 135, 227, 0.8));
+}
+.cz-svg-bead--active {
+  filter: drop-shadow(0 0 14px rgba(230, 198, 106, 0.95)) !important;
+}
+.cz-svg-bead--reorder {
+  animation: cz-pulse-reorder 1.4s ease-in-out infinite alternate;
+}
+@keyframes cz-pulse-reorder {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.14); }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cz-bracelet-disc {
+    animation: none !important;
+  }
+}
+
+/* Center Brand Medallion */
+.cz-medallion {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(246, 238, 252, 0.75));
+  border: 1px solid rgba(198, 135, 227, 0.35);
+  box-shadow: 0 10px 30px rgba(45, 20, 65, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+}
+.cz-medallion__mark {
+  height: 24px;
+  width: auto;
+  opacity: 0.85;
+}
+.cz-medallion__text {
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  color: var(--forest-d);
+  font-weight: 500;
+  margin-top: 2px;
+}
+.cz-medallion__sub {
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Floating Pedestal Toolbar */
+.cz-pedestal-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 480px;
+  margin-top: 18px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(198, 135, 227, 0.2);
+  box-shadow: 0 4px 16px rgba(45, 20, 65, 0.05);
+  z-index: 5;
+}
+
+.cz-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(70, 37, 94, 0.06);
+  border: 1px solid rgba(70, 37, 94, 0.1);
+  color: var(--forest-d);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.cz-tool-btn:hover {
+  background: var(--forest-d);
+  color: #ffffff;
+}
+.cz-tool-btn.is-active .cz-spin-icon {
+  animation: cz-spin-icon 4s linear infinite;
+}
+@keyframes cz-spin-icon {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cz-pedestal-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cz-meta-pill {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(70, 37, 94, 0.08);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--forest-d);
+}
+.cz-meta-pill--match {
+  background: rgba(47, 125, 79, 0.15);
+  color: #246a41;
+}
+.cz-meta-sub {
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+/* =========================================================
+   STRAND ARRANGER & BEAD SEQUENCE
+   ========================================================= */
+.cz-strand-section {
+  padding: 18px 22px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(198, 135, 227, 0.2);
+}
+.cz-strand-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+.cz-strand-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--forest-d);
+  margin: 0;
+}
+.cz-strand-subtitle {
+  font-size: 11.5px;
+  color: var(--ink-2);
+}
+
+.cz-strand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 4px;
+}
+.cz-strand-empty {
+  width: 100%;
+  text-align: center;
+  padding: 24px;
+  color: var(--ink-2);
+  font-size: 13.5px;
+}
+
+.cz-strand-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(70, 37, 94, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+.cz-strand__swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+.cz-strand__name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--forest-d);
+  white-space: nowrap;
+}
+.cz-strand__price {
+  font-size: 11px;
+  color: var(--ink-2);
+}
+.cz-strand__ctrl {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 4px;
+}
+.cz-strand__move {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(70, 37, 94, 0.2);
+  background: #ffffff;
+  color: var(--forest-d);
+  font-size: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cz-strand__move:hover:not(:disabled) {
+  background: var(--forest-d);
+  color: #ffffff;
+}
+.cz-strand__move:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.cz-strand__rem {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(198, 70, 70, 0.25);
+  background: rgba(255, 255, 255, 0.8);
+  color: #c0392b;
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cz-strand__rem:hover {
+  background: #c0392b;
+  color: #ffffff;
+}
+
+/* Bead drag-and-drop visual states */
+.cz-strand-item--dragging {
+  opacity: 0.45;
+  border: 2px dashed var(--forest-d);
+  background: rgba(198, 135, 227, 0.15);
+  box-shadow: none;
+}
+
+.cz-strand-item--drag-over {
+  border: 2px solid var(--forest-d);
+  background: rgba(198, 135, 227, 0.25);
+  box-shadow: 0 0 12px rgba(198, 135, 227, 0.35);
+}
+
+.cz-strand-item--selected {
+  border: 2px solid var(--gold);
+  background: rgba(230, 198, 106, 0.15);
+  box-shadow: 0 0 12px rgba(230, 198, 106, 0.35);
+}
+
+/* Studio Actions Bar */
+.cz-actions-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   RIGHT PANEL: SIZING, SPECS & BILLING
+   ========================================================= */
+.cz-panel--specs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cz-spec-group {
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(70, 37, 94, 0.08);
+}
+.cz-spec-group:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cz-spec-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.cz-label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--forest-d);
+}
+
+.cz-unit-toggle {
+  display: flex;
+  background: rgba(70, 37, 94, 0.06);
+  border-radius: 999px;
+  padding: 2px;
+}
+.cz-unit-radio {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+}
+.cz-unit-radio input {
+  display: none;
+}
+.cz-unit-radio span {
+  padding: 3px 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  color: var(--ink-2);
+  transition: all 0.2s;
+}
+.cz-unit-radio input:checked + span {
+  background: var(--forest-d);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.cz-slider-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.cz-range {
+  flex: 1;
+  accent-color: var(--forest-d);
+  cursor: pointer;
+}
+.cz-slider-inputs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cz-num-input {
+  width: 65px;
+  padding: 6px 8px;
+  border: 1px solid rgba(70, 37, 94, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--forest-d);
+  text-align: center;
+}
+.cz-sub-val {
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+.cz-fit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.cz-fit-label {
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+/* Quick Bead Size Pills */
+.cz-size-pills {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.cz-size-pill {
+  padding: 8px 4px;
+  border-radius: 10px;
+  border: 1px solid rgba(70, 37, 94, 0.15);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--forest-d);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+.cz-size-pill:hover:not(:disabled) {
+  border-color: var(--gold);
+  background: #ffffff;
+}
+.cz-size-pill.is-active {
+  background: var(--forest-d);
+  color: #ffffff;
+  border-color: var(--forest-d);
+  box-shadow: 0 4px 12px rgba(45, 20, 65, 0.2);
+}
+.cz-size-pill:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.cz-select {
+  padding: 8px 12px;
+  border: 1px solid rgba(70, 37, 94, 0.15);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  font: inherit;
+  font-size: 13px;
+  color: var(--forest-d);
+  cursor: pointer;
+}
+.cz-select--full {
+  width: 100%;
+}
+
+.cz-measure-details {
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.cz-measure-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: var(--forest-d);
+  font-weight: 500;
+}
+.cz-measure-text {
+  margin-top: 6px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  line-height: 1.45;
+}
+
+/* Price Breakdown Card */
+.cz-price-card {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(198, 135, 227, 0.2);
+}
+.cz-price-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  margin-bottom: 6px;
+}
+.cz-price-line--total {
+  border-top: 1px solid rgba(70, 37, 94, 0.12);
+  padding-top: 8px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 14.5px;
+  color: var(--forest-d);
+  font-weight: 500;
+}
+.cz-total-num {
+  font-size: 20px;
+  color: var(--forest-d);
+}
+
+.cz-summary-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--forest-d);
+  margin: 0 0 10px;
+}
+.cz-summary-list {
+  max-height: 140px;
+  overflow-y: auto;
+}
+.cz-summary-empty {
+  font-size: 12.5px;
+  color: var(--ink-2);
+  padding: 6px 0;
+}
+.cz-summary-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  padding: 3px 0;
+}
+.cz-summary__swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cz-summary__title {
+  flex: 1;
+  color: var(--forest-d);
+}
+.cz-summary__qty {
+  color: var(--ink-2);
+}
+.cz-summary__price {
+  font-weight: 500;
+  color: var(--forest-d);
+}
+
+/* Review CTA Card */
+.cz-review-card {
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(246, 238, 252, 0.7));
+  border: 1px solid rgba(198, 135, 227, 0.35);
+  box-shadow: 0 12px 30px rgba(45, 20, 65, 0.08);
+}
+.cz-review-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.cz-review-card__title {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--forest-d);
+  margin: 0;
+}
+.cz-review-card__badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.cz-review-card__badge--ok {
+  background: rgba(47, 125, 79, 0.15);
+  color: #246a41;
+}
+.cz-review-card__badge--warn {
+  background: rgba(179, 84, 30, 0.15);
+  color: #b3541e;
+}
+.cz-review-card__grid {
+  display: grid;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  margin-bottom: 16px;
+}
+.cz-review-card__item {
+  display: flex;
+  justify-content: space-between;
+}
+.cz-review-card__item strong {
+  color: var(--forest-d);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* =========================================================
+   TOOLTIP: LUXURY GLASSMORPHISM FIVE-LINE LORE
+   ========================================================= */
+.cz-tooltip {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0);
+  pointer-events: none;
+  z-index: 999999;
+}
+.cz-tooltip__card {
+  max-width: 260px;
+  min-width: 220px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(30, 14, 44, 0.94);
+  color: var(--ivory);
+  font-family: var(--sans);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(198, 135, 227, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.cz-tooltip__title {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--gold-l);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(198, 135, 227, 0.2);
+}
+.cz-tooltip__line {
+  margin: 4px 0;
+  font-size: 12px;
+  color: rgba(242, 233, 248, 0.9);
+  line-height: 1.45;
+}
+.cz-tooltip__line:first-of-type {
+  font-weight: 500;
+  color: #ffffff;
+}
+.cz-tooltip__disclaimer {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(198, 135, 227, 0.2);
+  font-size: 10px;
+  color: var(--gold-l);
+  font-style: italic;
+  line-height: 1.35;
+  opacity: 0.88;
+}
+.cz-tooltip__arrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(30, 14, 44, 0.94);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  transform: rotate(45deg);
+  bottom: -6px;
+  left: 50%;
+  margin-left: -5px;
+}
+.cz-tooltip__arrow--top {
+  top: -6px;
+  bottom: auto;
+  border-bottom: none;
+  border-right: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================================
+   FLYING ORB ANIMATION
+   ========================================================= */
+.cz-flying-crystal {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  border-radius: 50%;
+  will-change: transform, opacity;
+}
+
+/* =========================================================
+   RESPONSIVE ADAPTATIONS
+   ========================================================= */
+@media (max-width: 1140px) {
+  .cz-studio-grid {
+    grid-template-columns: 280px 1fr 300px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 980px) {
+  .cz-studio-grid {
+    grid-template-columns: 1fr;
+  }
+  .cz-centerpiece {
+    order: -1;
+  }
+  .cz-svg-container {
+    max-width: 650px;
+  }
+  .cz-pedestal__halo,
+  .cz-pedestal__ring {
+    width: 580px;
+    height: 580px;
+  }
+}
+
+@media (max-width: 540px) {
+  .cz-svg-container {
+    max-width: 480px;
+  }
+  .cz-pedestal__halo,
+  .cz-pedestal__ring {
+    width: 440px;
+    height: 440px;
+  }
+  .cz-medallion {
+    width: 92px;
+    height: 92px;
+  }
+  .cz-medallion__mark {
+    height: 20px;
+  }
+  .cz-medallion__text {
+    font-size: 12px;
+  }
+  .cz-crystal-card {
+    grid-template-columns: 64px 1fr;
+  }
+  .cz-crystal-card__action {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   PHOTOREALISTIC SELECTED CRYSTAL SPOTLIGHT SHOWCASE
+   ========================================================= */
+.cz-selected-crystal-spotlight {
+  margin-bottom: 24px;
+}
+
+.cz-spotlight-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(246, 238, 252, 0.7));
+  border: 1.5px solid rgba(168, 110, 199, 0.35);
+  box-shadow: 0 14px 36px rgba(38, 20, 53, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: all 0.3s var(--ease);
+}
+
+.cz-spotlight-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 18px 44px rgba(38, 20, 53, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.cz-spotlight-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.cz-spotlight-frame {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(198, 135, 227, 0.3));
+  border: 1.5px solid rgba(168, 110, 199, 0.4);
+  box-shadow: 0 12px 28px rgba(38, 20, 53, 0.15), inset 0 2px 6px rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cz-spotlight-frame::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 14px;
+  width: 50px;
+  height: 25px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+  pointer-events: none;
+}
+
+.cz-spotlight-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.5s var(--ease);
+  filter: drop-shadow(0 4px 10px rgba(28, 14, 41, 0.2));
+}
+
+.cz-spotlight-card:hover .cz-spotlight-img {
+  transform: scale(1.06);
+}
+
+.cz-spotlight-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cz-spotlight-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  border-bottom: 1px solid rgba(70, 37, 94, 0.08);
+  padding-bottom: 8px;
+}
+
+.cz-spotlight-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--forest-d);
+  line-height: 1.2;
+}
+
+.cz-spotlight-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--forest);
+  white-space: nowrap;
+}
+
+.cz-spotlight-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.cz-spotlight-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(168, 110, 199, 0.15);
+  font-size: 12px;
+}
+
+.cz-spotlight-spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.cz-spotlight-spec-label {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-2);
+  font-weight: 400;
+}
+
+.cz-spotlight-spec-val {
+  font-weight: 500;
+  color: var(--forest-d);
+}
+
+.cz-spotlight-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.cz-spotlight-add-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 38px;
+  background: linear-gradient(135deg, var(--forest-d), var(--forest));
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+}
+
+.cz-spotlight-add-btn:hover {
+  background: linear-gradient(135deg, var(--gold), var(--forest-d));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(70, 37, 94, 0.25);
+}
+
+.cz-spotlight-rem-btn {
+  height: 38px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(168, 110, 199, 0.35);
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+}
+
+.cz-spotlight-rem-btn:hover:not(:disabled) {
+  border-color: #e11d48;
+  color: #e11d48;
+  background: #fff;
+}
+
+.cz-spotlight-rem-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 /* =========================================================

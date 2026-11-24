@@ -34,13 +34,20 @@
       if (existing) {
         existing.qty += 1;
       } else {
-        this.items.push({
+        const item = {
           id: product.id,
           title: product.title,
           price: Number(product.price) || 0,
           img: product.img || '',
           qty: 1
-        });
+        };
+        // Preserve custom design metadata when provided
+        if (product.design)  item.design = product.design;
+        if (product.beadSize) item.beadSize = product.beadSize;
+        if (product.wrist)    item.wrist = product.wrist;
+        if (product.fit)      item.fit = product.fit;
+        if (product.beadCount) item.beadCount = product.beadCount;
+        this.items.push(item);
       }
       this.save();
       this.showToast('Added "' + product.title + '" to your bag');

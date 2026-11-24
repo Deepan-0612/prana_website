@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Customize — Prana</title>
-  <meta name="description" content="Customize — Prana. This page is under development.">
+  <meta name="description" content="Design your own PRĀNA crystal bracelet.">
   <meta name="theme-color" content="#f2e9f8">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%2346255E'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23C687E3'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,13 +14,12 @@
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/cart.js"></script>
-  <script type="module" src="js/main.js"></script>
+  <script src="js/crystal-assets.js"></script>
+  <script type="module" src="js/customize.js"></script>
 </head>
 <body>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><g id="glyph-0-0"><path d="M 4.890625 0 L 4.890625 -1.25 C 6.359375 -1.695312 7.363281 -2.65625 7.90625 -4.125 C 8.445312 -5.59375 8.71875 -8.269531 8.71875 -12.15625 L 8.71875 -54.875 C 8.71875 -58.832031 8.445312 -61.53125 7.90625 -62.96875 C 7.363281 -64.40625 6.359375 -65.347656 4.890625 -65.796875 L 4.890625 -67.03125 L 24.328125 -67.03125 C 30.960938 -67.03125 36.179688 -66.101562 39.984375 -64.25 C 43.785156 -62.40625 46.484375 -60.046875 48.078125 -57.171875 C 49.671875 -54.296875 50.46875 -51.296875 50.46875 -48.171875 C 50.46875 -41.785156 48.1875 -36.582031 43.625 -32.5625 C 39.0625 -28.539062 32.304688 -26.53125 23.359375 -26.53125 L 16.5625 -26.53125 L 16.5625 -12.15625 C 16.5625 -8.269531 16.832031 -5.59375 17.375 -4.125 C 17.925781 -2.65625 18.929688 -1.695312 20.390625 -1.25 L 20.390625 0 Z M 16.5625 -27.96875 L 23.171875 -27.96875 C 29.304688 -27.96875 33.984375 -29.5625 37.203125 -32.75 C 40.429688 -35.945312 42.046875 -40.351562 42.046875 -45.96875 C 42.046875 -49.414062 41.328125 -52.625 39.890625 -55.59375 C 38.453125 -58.5625 36.164062 -60.96875 33.03125 -62.8125 C 29.90625 -64.664062 25.757812 -65.59375 20.59375 -65.59375 C 19.945312 -65.59375 19.253906 -65.578125 18.515625 -65.546875 C 17.785156 -65.515625 17.132812 -65.46875 16.5625 -65.40625 Z M 16.5625 -27.96875 "/></g><g id="glyph-0-1"><path d="M 3.0625 0 L 3.0625 -1.25 C 4.53125 -1.695312 5.535156 -2.65625 6.078125 -4.125 C 6.617188 -5.59375 6.890625 -8.269531 6.890625 -12.15625 L 6.890625 -34.1875 C 6.890625 -36.425781 6.742188 -38.101562 6.453125 -39.21875 C 6.171875 -40.332031 5.757812 -41.144531 5.21875 -41.65625 C 4.675781 -42.164062 3.957031 -42.613281 3.0625 -43 L 3.0625 -44.046875 L 13.5 -48.65625 L 14.359375 -47.984375 L 14.359375 -36.015625 C 15.128906 -37.859375 16.132812 -39.578125 17.375 -41.171875 C 18.625 -42.773438 19.953125 -44.085938 21.359375 -45.109375 C 22.828125 -46.191406 24.4375 -47.035156 26.1875 -47.640625 C 27.945312 -48.242188 29.972656 -48.546875 32.265625 -48.546875 C 34.179688 -48.546875 35.695312 -48.320312 36.8125 -47.875 C 37.9375 -47.4375 38.5 -46.800781 38.5 -45.96875 C 38.5 -44.945312 38.003906 -43.78125 37.015625 -42.46875 C 36.023438 -41.164062 34.664062 -40.515625 32.9375 -40.515625 C 31.664062 -40.515625 30.054688 -40.753906 28.109375 -41.234375 C 26.160156 -41.710938 23.78125 -42.363281 20.96875 -43.1875 C 20.070312 -42.550781 19.128906 -41.578125 18.140625 -40.265625 C 17.148438 -38.960938 16.320312 -37.507812 15.65625 -35.90625 C 14.988281 -34.3125 14.585938 -32.75 14.453125 -31.21875 L 14.359375 -31.21875 L 14.359375 -12.15625 C 14.359375 -8.269531 14.628906 -5.59375 15.171875 -4.125 C 15.722656 -2.65625 16.734375 -1.695312 18.203125 -1.25 L 18.203125 0 Z M 3.0625 0 "/></g><g id="glyph-0-2"><path d="M 40.125 0 C 38.207031 0 37.25 -0.957031 37.25 -2.875 L 37.25 -20.109375 C 36.289062 -16.210938 34.789062 -12.664062 32.75 -9.46875 C 30.707031 -6.28125 28.328125 -3.742188 25.609375 -1.859375 C 22.898438 0.015625 19.953125 0.953125 16.765625 0.953125 C 14.398438 0.953125 12.195312 0.472656 10.15625 -0.484375 C 8.113281 -1.441406 6.46875 -2.84375 5.21875 -4.6875 C 3.976562 -6.539062 3.359375 -8.84375 3.359375 -11.59375 C 3.359375 -14.90625 4.347656 -17.613281 6.328125 -19.71875 C 8.304688 -21.832031 10.9375 -23.554688 14.21875 -24.890625 C 17.507812 -26.234375 21.035156 -27.414062 24.796875 -28.4375 L 37.25 -31.796875 C 37 -36.453125 35.722656 -39.878906 33.421875 -42.078125 C 31.117188 -44.285156 27.925781 -45.390625 23.84375 -45.390625 C 20.96875 -45.390625 18.171875 -44.703125 15.453125 -43.328125 C 12.742188 -41.960938 10.175781 -39.8125 7.75 -36.875 L 6.890625 -37.640625 C 9.640625 -41.023438 12.753906 -43.6875 16.234375 -45.625 C 19.710938 -47.570312 23.523438 -48.546875 27.671875 -48.546875 C 33.484375 -48.546875 37.757812 -47.03125 40.5 -44 C 43.25 -40.96875 44.625 -36.738281 44.625 -31.3125 L 44.625 -12.15625 C 44.625 -8.269531 44.894531 -5.59375 45.4375 -4.125 C 45.976562 -2.65625 46.984375 -1.695312 48.453125 -1.25 L 48.453125 0 Z M 10.53125 -14.265625 C 10.53125 -11.140625 11.472656 -8.757812 13.359375 -7.125 C 15.242188 -5.5 17.554688 -4.6875 20.296875 -4.6875 C 22.859375 -4.6875 25.175781 -5.40625 27.25 -6.84375 C 29.320312 -8.28125 31.09375 -10.144531 32.5625 -12.4375 C 34.03125 -14.738281 35.175781 -17.226562 36 -19.90625 C 36.832031 -22.59375 37.25 -25.179688 37.25 -27.671875 L 37.25 -30.546875 L 25.1875 -27.296875 C 22.820312 -26.648438 20.503906 -25.800781 18.234375 -24.75 C 15.972656 -23.695312 14.125 -22.34375 12.6875 -20.6875 C 11.25 -19.03125 10.53125 -16.890625 10.53125 -14.265625 Z M 16.5625 -27.96875 L 23.171875 -27.96875 C 29.304688 -27.96875 33.984375 -29.5625 37.203125 -32.75 C 40.429688 -35.945312 42.046875 -40.351562 42.046875 -45.96875 C 42.046875 -49.414062 41.328125 -52.625 39.890625 -55.59375 C 38.453125 -58.5625 36.164062 -60.96875 33.03125 -62.8125 C 29.90625 -64.664062 25.757812 -65.59375 20.59375 -65.59375 C 19.945312 -65.59375 19.253906 -65.578125 18.515625 -65.546875 C 17.785156 -65.515625 17.132812 -65.46875 16.5625 -65.40625 Z M 16.5625 -27.96875 "/></g><g id="glyph-0-1"><path d="M 3.0625 0 L 3.0625 -1.25 C 4.53125 -1.695312 5.535156 -2.65625 6.078125 -4.125 C 6.617188 -5.59375 6.890625 -8.269531 6.890625 -12.15625 L 6.890625 -34.1875 C 6.890625 -36.425781 6.742188 -38.101562 6.453125 -39.21875 C 6.171875 -40.332031 5.757812 -41.144531 5.21875 -41.65625 C 4.675781 -42.164062 3.957031 -42.613281 3.0625 -43 L 3.0625 -44.046875 L 13.5 -48.65625 L 14.359375 -47.984375 L 14.359375 -36.015625 C 15.128906 -37.859375 16.132812 -39.578125 17.375 -41.171875 C 18.625 -42.773438 19.953125 -44.085938 21.359375 -45.109375 C 22.828125 -46.191406 24.4375 -47.035156 26.1875 -47.640625 C 27.945312 -48.242188 29.972656 -48.546875 32.265625 -48.546875 C 34.179688 -48.546875 35.695312 -48.320312 36.8125 -47.875 C 37.9375 -47.4375 38.5 -46.800781 38.5 -45.96875 C 38.5 -44.945312 38.003906 -43.78125 37.015625 -42.46875 C 36.023438 -41.164062 34.664062 -40.515625 32.9375 -40.515625 C 31.664062 -40.515625 30.054688 -40.753906 28.109375 -41.234375 C 26.160156 -41.710938 23.78125 -42.363281 20.96875 -43.1875 C 20.070312 -42.550781 19.128906 -41.578125 18.140625 -40.265625 C 17.148438 -38.960938 16.320312 -37.507812 15.65625 -35.90625 C 14.988281 -34.3125 14.585938 -32.75 14.453125 -31.21875 L 14.359375 -31.21875 L 14.359375 -12.15625 C 14.359375 -8.269531 14.628906 -5.59375 15.171875 -4.125 C 15.722656 -2.65625 16.734375 -1.695312 18.203125 -1.25 L 18.203125 0 Z M 3.0625 0 "/></g><g id="glyph-0-2"><path d="M 40.125 0 C 38.207031 0 37.25 -0.957031 37.25 -2.875 L 37.25 -20.109375 C 36.289062 -16.210938 34.789062 -12.664062 32.75 -9.46875 C 30.707031 -6.28125 28.328125 -3.742188 25.609375 -1.859375 C 22.898438 0.015625 19.953125 0.953125 16.765625 0.953125 C 14.398438 0.953125 12.195312 0.472656 10.15625 -0.484375 C 8.113281 -1.441406 6.46875 -2.84375 5.21875 -4.6875 C 3.976562 -6.539062 3.359375 -8.84375 3.359375 -11.59375 C 3.359375 -14.90625 4.347656 -17.613281 6.328125 -19.71875 C 8.304688 -21.832031 10.9375 -23.554688 14.21875 -24.890625 C 17.507812 -26.234375 21.035156 -27.414062 24.796875 -28.4375 L 37.25 -31.796875 C 37 -36.453125 35.722656 -39.878906 33.421875 -42.078125 C 31.117188 -44.285156 27.925781 -45.390625 23.84375 -45.390625 C 20.96875 -45.390625 18.171875 -44.703125 15.453125 -43.328125 C 12.742188 -41.960938 10.175781 -39.8125 7.75 -36.875 L 6.890625 -37.640625 C 9.640625 -41.023438 12.753906 -43.6875 16.234375 -45.625 C 19.710938 -47.570312 23.523438 -48.546875 27.671875 -48.546875 C 33.484375 -48.546875 37.757812 -47.03125 40.5 -44 C 43.25 -40.96875 44.625 -36.738281 44.625 -31.3125 L 44.625 -12.15625 C 44.625 -8.269531 44.894531 -5.59375 45.4375 -4.125 C 45.976562 -2.65625 46.984375 -1.695312 48.453125 -1.25 L 48.453125 0 Z M 10.53125 -14.265625 C 10.53125 -11.140625 11.472656 -8.757812 13.359375 -7.125 C 15.242188 -5.5 17.554688 -4.6875 20.296875 -4.6875 C 22.859375 -4.6875 25.175781 -5.40625 27.25 -6.84375 C 29.320312 -8.28125 31.09375 -10.144531 32.5625 -12.4375 C 34.03125 -14.738281 35.175781 -17.226562 36 -19.90625 C 36.832031 -22.59375 37.25 -25.179688 37.25 -27.671875 L 37.25 -30.546875 L 25.1875 -27.296875 C 22.820312 -26.648438 20.503906 -25.800781 18.234375 -24.75 C 15.972656 -23.695312 14.125 -22.34375 12.6875 -20.6875 C 11.25 -19.03125 10.53125 -16.890625 10.53125 -14.265625 Z M 15.234375 -56.21875 L 16.953125 -58.328125 C 17.265625 -58.765625 17.597656 -59.046875 17.953125 -59.171875 C 18.304688 -59.304688 18.675781 -59.375 19.0625 -59.375 L 41.65625 -59.375 L 41.84375 -59.09375 L 40.125 -56.984375 C 39.875 -56.535156 39.554688 -56.226562 39.171875 -56.0625 C 38.785156 -55.90625 38.398438 -55.828125 38.015625 -55.828125 L 15.421875 -55.828125 Z M 15.234375 -56.21875 "/></g><g id="glyph-0-3"><path d="M 3.0625 0 L 3.0625 -1.25 C 4.53125 -1.695312 5.535156 -2.65625 6.078125 -4.125 C 6.617188 -5.59375 6.890625 -8.269531 6.890625 -12.15625 L 6.890625 -34.1875 C 6.890625 -36.425781 6.757812 -38.101562 6.5 -39.21875 C 6.25 -40.332031 5.835938 -41.144531 5.265625 -41.65625 C 4.691406 -42.164062 3.957031 -42.613281 3.0625 -43 L 3.0625 -44.046875 L 13.59375 -48.65625 L 14.359375 -47.984375 L 14.359375 -39.75 C 17.171875 -41.976562 20.332031 -44 23.84375 -45.8125 C 27.351562 -47.632812 30.960938 -48.546875 34.671875 -48.546875 C 39.390625 -48.546875 43.085938 -47.171875 45.765625 -44.421875 C 48.453125 -41.679688 49.796875 -37.503906 49.796875 -31.890625 L 49.796875 -12.15625 C 49.796875 -8.269531 50.066406 -5.59375 50.609375 -4.125 C 51.148438 -2.65625 52.15625 -1.695312 53.625 -1.25 L 53.625 0 L 38.5 0 L 38.5 -1.25 C 39.96875 -1.695312 40.972656 -2.65625 41.515625 -4.125 C 42.054688 -5.59375 42.328125 -8.269531 42.328125 -12.15625 L 42.328125 -29.96875 C 42.328125 -34.945312 41.273438 -38.757812 39.171875 -41.40625 C 37.066406 -44.0625 33.90625 -45.390625 29.6875 -45.390625 C 27.070312 -45.390625 24.46875 -44.703125 21.875 -43.328125 C 19.289062 -41.960938 16.785156 -40.253906 14.359375 -38.203125 L 14.359375 -12.15625 C 14.359375 -8.269531 14.644531 -5.59375 15.21875 -4.125 C 15.800781 -2.65625 16.796875 -1.695312 18.203125 -1.25 L 18.203125 0 Z M 3.0625 0 "/></g><g id="glyph-0-4"><path d="M 40.125 0 C 38.207031 0 37.25 -0.957031 37.25 -2.875 L 37.25 -20.109375 C 36.289062 -16.210938 34.789062 -12.664062 32.75 -9.46875 C 30.707031 -6.28125 28.328125 -3.742188 25.609375 -1.859375 C 22.898438 0.015625 19.953125 0.953125 16.765625 0.953125 C 14.398438 0.953125 12.195312 0.472656 10.15625 -0.484375 C 8.113281 -1.441406 6.46875 -2.84375 5.21875 -4.6875 C 3.976562 -6.539062 3.359375 -8.84375 3.359375 -11.59375 C 3.359375 -14.90625 4.347656 -17.613281 6.328125 -19.71875 C 8.304688 -21.832031 10.9375 -23.554688 14.21875 -24.890625 C 17.507812 -26.234375 21.035156 -27.414062 24.796875 -28.4375 L 37.25 -31.796875 C 37 -36.453125 35.722656 -39.878906 33.421875 -42.078125 C 31.117188 -44.285156 27.925781 -45.390625 23.84375 -45.390625 C 20.96875 -45.390625 18.171875 -44.703125 15.453125 -43.328125 C 12.742188 -41.960938 10.175781 -39.8125 7.75 -36.875 L 6.890625 -37.640625 C 9.640625 -41.023438 12.753906 -43.6875 16.234375 -45.625 C 19.710938 -47.570312 23.523438 -48.546875 27.671875 -48.546875 C 33.484375 -48.546875 37.757812 -47.03125 40.5 -44 C 43.25 -40.96875 44.625 -36.738281 44.625 -31.3125 L 44.625 -12.15625 C 44.625 -8.269531 44.894531 -5.59375 45.4375 -4.125 C 45.976562 -2.65625 46.984375 -1.695312 48.453125 -1.25 L 48.453125 0 Z M 10.53125 -14.265625 C 10.53125 -11.140625 11.472656 -8.757812 13.359375 -7.125 C 15.242188 -5.5 17.554688 -4.6875 20.296875 -4.6875 C 22.859375 -4.6875 25.175781 -5.40625 27.25 -6.84375 C 29.320312 -8.28125 31.09375 -10.144531 32.5625 -12.4375 C 34.03125 -14.738281 35.175781 -17.226562 36 -19.90625 C 36.832031 -22.59375 37.25 -25.179688 37.25 -27.671875 L 37.25 -30.546875 L 25.1875 -27.296875 C 22.820312 -26.648438 20.503906 -25.800781 18.234375 -24.75 C 15.972656 -23.695312 14.125 -22.34375 12.6875 -20.6875 C 11.25 -19.03125 10.53125 -16.890625 10.53125 -14.265625 Z M 15.234375 -56.21875 L 16.953125 -58.328125 C 17.265625 -58.765625 17.597656 -59.046875 17.953125 -59.171875 C 18.304688 -59.304688 18.675781 -59.375 19.0625 -59.375 L 41.65625 -59.375 L 41.84375 -59.09375 L 40.125 -56.984375 C 39.875 -56.535156 39.554688 -56.226562 39.171875 -56.0625 C 38.785156 -55.90625 38.398438 -55.828125 38.015625 -55.828125 L 15.421875 -55.828125 Z M 15.234375 -56.21875 "/></g><g id="glyph-1-0"><path d="M 11.1875 0.359375 C 9.789062 0.359375 8.554688 0.078125 7.484375 -0.484375 C 6.410156 -1.054688 5.585938 -1.84375 5.015625 -2.84375 C 4.453125 -3.851562 4.171875 -4.992188 4.171875 -6.265625 C 4.171875 -7.535156 4.453125 -8.671875 5.015625 -9.671875 C 5.585938 -10.679688 6.410156 -11.476562 7.484375 -12.0625 C 8.554688 -12.644531 9.789062 -12.9375 11.1875 -12.9375 C 12.625 -12.9375 13.875 -12.648438 14.9375 -12.078125 C 16.007812 -11.515625 16.832031 -10.726562 17.40625 -9.71875 C 17.976562 -8.71875 18.265625 -7.582031 18.265625 -6.3125 C 18.265625 -4.375 17.617188 -2.773438 16.328125 -1.515625 C 15.046875 -0.265625 13.332031 0.359375 11.1875 0.359375 Z M 11.1875 0.359375 "/></g><clipPath id="pw-dotclip"><rect x="0" y="0" width="24" height="112"/></clipPath><symbol id="prana-wordmark" viewBox="178.50 536.50 240.50 87.75"><g fill="currentColor"><use href="#glyph-0-0" x="175.201654" y="605.074266"/><use href="#glyph-0-1" x="228.062986" y="605.074266"/><use href="#glyph-0-2" x="262.345778" y="605.074266"/><use href="#glyph-0-3" x="313.100315" y="605.074266"/><use href="#glyph-0-4" x="369.026082" y="605.074266"/><g transform="translate(331 536)" clip-path="url(#pw-dotclip)"><use href="#glyph-1-0" x="0.298744" y="86.343033"/></g></g></symbol></defs></svg>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><g id="glyph-0-0"><path d="M 4.890625 0 L 4.890625 -1.25 C 6.359375 -1.695312 7.363281 -2.65625 7.90625 -4.125 C 8.445312 -5.59375 8.71875 -8.269531 8.71875 -12.15625 L 8.71875 -54.875 C 8.71875 -58.832031 8.445312 -61.53125 7.90625 -62.96875 C 7.363281 -64.40625 6.359375 -65.347656 4.890625 -65.796875 L 4.890625 -67.03125 L 24.328125 -67.03125 C 30.960938 -67.03125 36.179688 -66.101562 39.984375 -64.25 C 43.785156 -62.40625 46.484375 -60.046875 48.078125 -57.171875 C 49.671875 -54.296875 50.46875 -51.296875 50.46875 -48.171875 C 50.46875 -41.785156 48.1875 -36.582031 43.625 -32.5625 C 39.0625 -28.539062 32.304688 -26.53125 23.359375 -26.53125 L 16.5625 -26.53125 L 16.5625 -12.15625 C 16.5625 -8.269531 16.832031 -5.59375 17.375 -4.125 C 17.925781 -2.65625 18.929688 -1.695312 20.390625 -1.25 L 20.390625 0 Z M 16.5625 -27.96875 L 23.171875 -27.96875 C 29.304688 -27.96875 33.984375 -29.5625 37.203125 -32.75 C 40.429688 -35.945312 42.046875 -40.351562 42.046875 -45.96875 C 42.046875 -49.414062 41.328125 -52.625 39.890625 -55.59375 C 38.453125 -58.5625 36.164062 -60.96875 33.03125 -62.8125 C 29.90625 -64.664062 25.757812 -65.59375 20.59375 -65.59375 C 19.945312 -65.59375 19.253906 -65.578125 18.515625 -65.546875 C 17.785156 -65.515625 17.132812 -65.46875 16.5625 -65.40625 Z M 16.5625 -27.96875 "/></g></defs></svg>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- ============ NAV ============ -->
   <header class="nav glass" id="nav">
     <a class="nav__logo" href="index.html" aria-label="Prāṇa home">
       <img class="nav__mark" src="assets/logo/mark.png" alt="" width="708" height="444">
@@ -44,19 +43,228 @@
       </button>
     </div>
   </header>
-
   <main id="main">
-    <section class="section" style="min-height: calc(100svh - 110px); padding-top: clamp(120px, 16vh, 180px); padding-bottom: 90px;">
+    <section class="section cz-section">
       <div class="wrap">
-        <header class="section__head" data-hero>
-          <p class="eyebrow">Customize</p>
-          <h1 class="h2">This page is under development</h1>
+        <header class="section__head cz-head text-center" data-hero>
+          <p class="eyebrow eyebrow--gold">Atelier Prāṇa</p>
+          <h1 class="h2">The Custom <em>Bracelet Studio.</em></h1>
+          <p class="section__sub cz-head__sub">Select authentic gemstones, sculpt your custom strand, and watch your creation come to life in the central atelier.</p>
         </header>
+
+        <!-- Studio Master Grid -->
+        <div class="cz-studio-grid">
+          
+          <!-- LEFT COLUMN: Crystal Library & Selection -->
+          <aside class="cz-panel cz-panel--library" aria-label="Gemstone Library">
+            <div class="cz-panel__header">
+              <span class="cz-panel__eyebrow">Select Stones</span>
+              <h2 class="cz-panel__title">Crystal Library</h2>
+              <p class="cz-panel__hint">Tap or hover any crystal to inspect its properties and add it to your bracelet.</p>
+            </div>
+
+            <!-- Featured Trio Highlight -->
+            <div class="cz-featured-trio">
+              <span class="cz-featured-label">Signature Quartz Trio</span>
+              <div id="czFeaturedCrystals" class="cz-featured-grid"></div>
+            </div>
+
+            <div class="cz-library-divider">
+              <span>All Gemstones</span>
+            </div>
+
+            <div class="cz-search-wrap">
+              <svg class="cz-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input type="search" id="czGemSearch" class="cz-search-input" placeholder="Search crystals & gemstones…" aria-label="Search gemstones">
+            </div>
+
+            <div id="czCatFilters" class="cz-cat-bar" role="tablist" aria-label="Gemstone Categories"></div>
+            
+            <div id="czGemList" class="cz-gems" role="region" aria-label="Gemstone Collection"></div>
+          </aside>
+
+          <!-- CENTER COLUMN: The Hero Bracelet Atelier Experience -->
+          <main class="cz-centerpiece" id="czCenterpiece" aria-label="Live Bracelet Studio Preview">
+            <div class="cz-pedestal">
+              <!-- Ambient Pedestal Halo -->
+              <div class="cz-pedestal__halo" aria-hidden="true"></div>
+              <div class="cz-pedestal__ring" aria-hidden="true"></div>
+
+              <!-- Main Interactive Bracelet Preview SVG -->
+              <div class="cz-svg-container" id="czSvgContainer">
+                <svg id="czSvg" viewBox="-440 -440 880 880" width="880" height="880" aria-label="Custom crystal bracelet live preview">
+                  <!-- Defs with realistic lighting, radial gradients & gemstone reflections are injected here -->
+                </svg>
+
+                <!-- Center Brand Medallion inside the bracelet loop -->
+                <div class="cz-medallion" id="czMedallion" aria-hidden="true">
+                  <img src="assets/logo/mark-dark.png" alt="" class="cz-medallion__mark" width="48" height="30">
+                  <span class="cz-medallion__text">PRĀṆA</span>
+                  <span class="cz-medallion__sub" id="czMedallionSub">Atelier</span>
+                </div>
+              </div>
+
+              <!-- Floating Pedestal Controls -->
+              <div class="cz-pedestal-toolbar">
+                <button type="button" id="czRotateToggle" class="cz-tool-btn is-active" aria-label="Pause or resume bracelet rotation" title="Toggle 360° display rotation">
+                  <svg class="cz-spin-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                  </svg>
+                  <span id="czRotateLabel">Rotating 360°</span>
+                </button>
+
+                <button type="button" id="czMacroToggle" class="cz-tool-btn" aria-label="Toggle close-up bead inspector" title="Toggle large close-up bead view">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/>
+                  </svg>
+                  <span id="czMacroLabel">Close-up</span>
+                </button>
+
+                <div class="cz-pedestal-meta">
+                  <span id="czCountPill" class="cz-meta-pill">
+                    <span id="czCount">0</span> beads
+                  </span>
+                  <span id="czRecCount" class="cz-meta-sub">Target: 21</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Strand Bead Arranger Strip -->
+            <div class="cz-strand-section">
+              <div class="cz-strand-head">
+                <h3 class="cz-strand-title">Strand Arrangement</h3>
+                <span class="cz-strand-subtitle">Drag or use arrows to rearrange bead sequence</span>
+              </div>
+              <div id="czStrand" class="cz-strand"></div>
+            </div>
+
+            <!-- Studio Actions Toolbar -->
+            <div class="cz-actions-bar">
+              <button id="czMirror" class="btn btn--ghost btn--sm" title="Mirror bead pattern symmetrically">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 18 4-4-4-4M10 6 6 10l4 4"/><line x1="12" x2="12" y1="2" y2="22"/></svg>
+                Mirror
+              </button>
+              <button id="czUndo" class="btn btn--ghost btn--sm" title="Undo last change">Undo</button>
+              <button id="czRedo" class="btn btn--ghost btn--sm" title="Redo change">Redo</button>
+              <button id="czClear" class="btn btn--ghost btn--sm" title="Reset all beads">Clear</button>
+              <button id="czSave" class="btn btn--ghost btn--sm" title="Save design to browser">Save</button>
+            </div>
+          </main>
+
+          <!-- RIGHT COLUMN: Selected Crystal Detail, Sizing & Checkout -->
+          <aside class="cz-panel cz-panel--specs" aria-label="Selected Crystal and Order Specifications">
+            
+            <!-- Selected Crystal Spotlight Showcase (Realistic Product Photograph) -->
+            <div class="cz-selected-crystal-spotlight" id="czSelectedSpotlight">
+              <span class="cz-panel__eyebrow">Active Selection</span>
+              <div class="cz-spotlight-card" id="czSpotlightCard">
+                <!-- Injected via customize.js with photographic crystal artwork -->
+              </div>
+            </div>
+
+            <div class="cz-panel__header" style="margin-top: 18px;">
+              <span class="cz-panel__eyebrow">Specifications</span>
+              <h2 class="cz-panel__title">Sizing & Order</h2>
+            </div>
+
+            <!-- Wrist Sizing Card -->
+            <div class="cz-spec-group">
+              <div class="cz-spec-label-row">
+                <label for="czWristSlider" class="cz-label">Wrist Circumference</label>
+                <div class="cz-unit-toggle">
+                  <label class="cz-unit-radio">
+                    <input type="radio" name="czUnit" id="czUnitCm" value="cm" checked>
+                    <span>cm</span>
+                  </label>
+                  <label class="cz-unit-radio">
+                    <input type="radio" name="czUnit" id="czUnitIn" value="in">
+                    <span>in</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="cz-slider-box">
+                <input type="range" id="czWristSlider" min="13" max="23" step="0.1" value="17" class="cz-range" aria-label="Wrist size slider">
+                <div class="cz-slider-inputs">
+                  <input type="number" id="czWristCm" step="0.1" value="17" class="cz-num-input" aria-label="Wrist measurement in cm">
+                  <span id="czWristInDisp" class="cz-sub-val">(6.7 in)</span>
+                </div>
+              </div>
+
+              <div class="cz-fit-row">
+                <label for="czFit" class="cz-fit-label">Comfort Fit:</label>
+                <select id="czFit" class="cz-select">
+                  <option value="snug">Snug (+0.5 cm)</option>
+                  <option value="comfortable" selected>Comfortable (+1.5 cm)</option>
+                  <option value="loose">Loose (+2.5 cm)</option>
+                </select>
+              </div>
+
+              <details class="cz-measure-details">
+                <summary class="cz-measure-summary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                  How to measure your wrist
+                </summary>
+                <p class="cz-measure-text">Wrap a soft measuring tape or a strip of paper around your wrist where you normally wear bracelets. Mark the overlap point and measure against a ruler.</p>
+              </details>
+            </div>
+
+            <!-- Bead Sizing Card -->
+            <div class="cz-spec-group">
+              <div class="cz-spec-label-row">
+                <label for="czSize" class="cz-label">Bead Diameter</label>
+                <span id="czBeadSizeLabel" class="cz-sub-val">Selected: 8 mm</span>
+              </div>
+              
+              <!-- Quick Diameter Selection Pills -->
+              <div id="czBeadSizePills" class="cz-size-pills" role="radiogroup" aria-label="Bead diameter quick selection">
+                <button type="button" class="cz-size-pill" data-size="6">6 mm</button>
+                <button type="button" class="cz-size-pill is-active" data-size="8">8 mm</button>
+                <button type="button" class="cz-size-pill" data-size="10">10 mm</button>
+                <button type="button" class="cz-size-pill" data-size="12">12 mm</button>
+                <button type="button" class="cz-size-pill" data-size="14">14 mm</button>
+              </div>
+
+              <select id="czSize" class="cz-select cz-select--full" aria-label="Bead diameter">
+                <option value="6">6 mm — Delicate & Subtle</option>
+                <option value="8" selected>8 mm — Signature Balance</option>
+                <option value="10">10 mm — Bold Statement</option>
+                <option value="12">12 mm — Prominent Luxury</option>
+                <option value="14">14 mm — Grand Centerpiece</option>
+              </select>
+            </div>
+
+            <!-- Live Summary Breakdown -->
+            <div class="cz-spec-group cz-spec-group--summary">
+              <h3 class="cz-summary-title">Design Summary</h3>
+              <div id="czSummary" class="cz-summary-list"></div>
+
+              <div class="cz-price-card">
+                <div class="cz-price-line">
+                  <span>Base Bracelet Core</span>
+                  <span>₹799</span>
+                </div>
+                <div class="cz-price-line">
+                  <span>Gemstone Additions</span>
+                  <span id="czBeadsPrice">₹0</span>
+                </div>
+                <div class="cz-price-line cz-price-line--total">
+                  <span>Total Crafting Price</span>
+                  <strong id="czTotalPrice" class="cz-total-num">₹799</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Final Review & CTA -->
+            <div id="czReview" class="cz-review-wrap"></div>
+          </aside>
+
+        </div>
       </div>
     </section>
+    <!-- In-page luxury notification toast (no browser alerts) -->
+    <div id="czToast" class="prana-toast" role="status" aria-live="polite"></div>
   </main>
-
-  <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="wrap footer__grid">
       <div class="footer__brand">
@@ -66,31 +274,8 @@
         </a>
         <p>Carry calm. Wear meaning.</p>
       </div>
-      <nav aria-label="Shop">
-        <h4>Shop</h4>
-        <a href="index.html">Home</a>
-        <a href="collections.html">Collections</a>
-        <a href="shop.html">Bracelets</a>
-        <a href="shop.html">Malas</a>
-        <a href="customize.html">Customize</a>
-      </nav>
-      <nav aria-label="Brand">
-        <h4>Brand</h4>
-        <a href="story.html">Our story</a>
-        <a href="story.html">Intention &amp; craft</a>
-        <a href="reviews.html">Customer Reviews</a>
-        <a href="mailto:hello@example.com">Contact</a>
-      </nav>
-      <nav aria-label="Follow">
-        <h4>Follow</h4>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
-      </nav>
-    </div>
-    <div class="wrap footer__base">
-      <span>© 2026 Prana. All rights reserved.</span>
-      <a href="#main">Back to top ↑</a>
     </div>
   </footer>
+  <!-- Studio dynamic elements will be injected via JS and styled via css/styles.css -->
 </body>
 </html>
