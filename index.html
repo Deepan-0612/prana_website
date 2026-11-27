@@ -70,20 +70,20 @@
 
   <!-- ============ NAV ============ -->
   <header class="nav glass" id="nav">
-    <a class="nav__logo" href="#top" aria-label="Prāṇa home">
+    <a class="nav__logo" href="index.html" aria-label="Prāṇa home">
       <img class="nav__mark" src="assets/logo/mark.png" alt="" width="708" height="444">
       <svg class="wm nav__word" viewBox="0 0 240.50 87.75" aria-hidden="true" focusable="false"><use href="#prana-wordmark"/></svg>
     </a>
     <nav class="nav__links" id="navLinks" aria-label="Primary">
       <a href="index.html" class="active">Home</a>
-      <a href="collections.html">Collections</a>
       <a href="shop.html">Shop</a>
       <a href="customize.html">Customize</a>
-      <a href="story.html">Our story</a>
+      <a href="story.html">About Us</a>
       <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="nav__actions">
-      <a class="nav__bag" href="#shop" aria-label="Bag, 0 items">
+      <a class="nav__bag" href="shop.html" aria-label="Bag, 0 items">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
         <span class="nav__count">0</span>
       </a>
@@ -132,15 +132,15 @@
             <img src="assets/img/collection-calm.webp" alt="" loading="lazy" width="1000" height="1250">
             <div class="card__cap glass glass--dark"><span class="card__n">01</span><h3>Calm</h3><p>Jade &amp; moonstone</p></div>
           </a>
-          <a class="card" href="collections.html" data-reveal>
+          <a class="card" href="shop.html" data-reveal>
             <img src="assets/img/tiger's eye.jpg" alt="" loading="lazy" width="1000" height="1250">
             <div class="card__cap glass glass--dark"><span class="card__n">02</span><h3>Courage</h3><p>Tiger’s eye</p></div>
           </a>
-          <a class="card" href="collections.html" data-reveal>
+          <a class="card" href="shop.html" data-reveal>
             <img src="assets/img/collection-clarity.webp" alt="" loading="lazy" width="1000" height="1250">
             <div class="card__cap glass glass--dark"><span class="card__n">03</span><h3>Clarity</h3><p>Lapis lazuli</p></div>
           </a>
-          <a class="card" href="collections.html" data-reveal>
+          <a class="card" href="shop.html" data-reveal>
             <img src="assets/img/collection-devotion.webp" alt="" loading="lazy" width="1000" height="1250">
             <div class="card__cap glass glass--dark"><span class="card__n">04</span><h3>Devotion</h3><p>Rudraksha</p></div>
           </a>
@@ -148,128 +148,36 @@
       </div>
     </section>
 
-    <!-- ============ PRODUCTS ============ -->
-    <section class="section section--sage" id="shop">
+    <!-- ============ CUSTOM STUDIO ============ -->
+    <section class="signature" id="customize">
       <div class="wrap">
-        <header class="section__head section__head--row" data-reveal>
-          <div>
-            <p class="eyebrow">The edit</p>
-            <h2 class="h2">Pieces to wear <em>daily.</em></h2>
+        <div class="signature__grid">
+          <div class="signature__media" data-reveal>
+            <img src="assets/img/Bacelet_example_prana.webp" alt="A natural-stone bracelet from the Prana collection" loading="lazy" width="1000" height="1250">
           </div>
-          <a class="link-arrow" href="shop.html">View all pieces <span aria-hidden="true">→</span></a>
-        </header>
-
-        <div class="grid">
-          <div class="product" data-reveal>
-            <a class="product__media" href="calm.html"><img src="assets/img/Prana calm bracelets.webp" alt="Sage Jade bracelet" loading="lazy" width="1000" height="1250"><span class="tag glass">Calm</span></a>
-            <div class="product__meta">
-              <h3><a href="calm.html" style="color:inherit;text-decoration:none;">Sage Jade Bracelet</a></h3>
-              <p>Natural jade · gold-tone spacers</p><span class="price">₹1,499</span>
-            </div>
-            <div class="product__actions">
-              <button class="btn-cart" type="button" data-add-cart data-product-id="sage-jade" data-product-title="Sage Jade Bracelet" data-product-price="1499" data-product-img="assets/img/Prana calm bracelets.webp">Add to bag</button>
-              <button class="btn-cart btn-cart--ghost" type="button" data-buy-now data-product-id="sage-jade" data-product-title="Sage Jade Bracelet" data-product-price="1499">Buy on WhatsApp</button>
-            </div>
-          </div>
-          <div class="product" data-reveal>
-            <a class="product__media" href="shop.html"><img src="assets/img/moonstone bracelet.webp" alt="Moonstone Halo bracelet" loading="lazy" width="1000" height="1250"><span class="tag glass">Intuition</span></a>
-            <div class="product__meta">
-              <h3><a href="shop.html" style="color:inherit;text-decoration:none;">Moonstone Halo</a></h3>
-              <p>Moonstone · gold-tone spacers</p><span class="price">₹1,799</span>
-            </div>
-            <div class="product__actions">
-              <button class="btn-cart" type="button" data-add-cart data-product-id="moonstone-halo" data-product-title="Moonstone Halo" data-product-price="1799" data-product-img="assets/img/moonstone bracelet.webp">Add to bag</button>
-              <button class="btn-cart btn-cart--ghost" type="button" data-buy-now data-product-id="moonstone-halo" data-product-title="Moonstone Halo" data-product-price="1799">Buy on WhatsApp</button>
-            </div>
-          </div>
-          <div class="product" data-reveal>
-            <a class="product__media" href="customize.html"><img src="assets/img/product-tigers-eye.webp" alt="Tiger's Eye strand bracelet" loading="lazy" width="1000" height="1250"><span class="tag glass">Courage</span></a>
-            <div class="product__meta">
-              <h3><a href="customize.html" style="color:inherit;text-decoration:none;">Tiger’s Eye Strand</a></h3>
-              <p>Tiger’s eye · gold-tone spacers</p><span class="price">₹1,699</span>
-            </div>
-            <div class="product__actions">
-              <button class="btn-cart" type="button" data-add-cart data-product-id="tigers-eye" data-product-title="Tiger’s Eye Strand" data-product-price="1699" data-product-img="assets/img/product-tigers-eye.webp">Add to bag</button>
-              <button class="btn-cart btn-cart--ghost" type="button" data-buy-now data-product-id="tigers-eye" data-product-title="Tiger’s Eye Strand" data-product-price="1699">Buy on WhatsApp</button>
-            </div>
-          </div>
-          <div class="product" data-reveal>
-            <a class="product__media" href="shop.html"><img src="assets/img/Lapis Lazuli.jpg" alt="Lapis Lazuli bracelet" loading="lazy" width="1000" height="1250"><span class="tag glass">Clarity</span></a>
-            <div class="product__meta">
-              <h3><a href="shop.html" style="color:inherit;text-decoration:none;">Lapis Lazuli Bracelet</a></h3>
-              <p>Lapis lazuli · gold-tone spacers</p><span class="price">₹1,899</span>
-            </div>
-            <div class="product__actions">
-              <button class="btn-cart" type="button" data-add-cart data-product-id="lapis-lazuli" data-product-title="Lapis Lazuli Bracelet" data-product-price="1899" data-product-img="assets/img/Lapis Lazuli.jpg">Add to bag</button>
-              <button class="btn-cart btn-cart--ghost" type="button" data-buy-now data-product-id="lapis-lazuli" data-product-title="Lapis Lazuli Bracelet" data-product-price="1899">Buy on WhatsApp</button>
-            </div>
-          </div>
-          <div class="product" data-reveal>
-            <a class="product__media" href="shop.html"><img src="assets/img/Rose Quartz Bracelet.webp" alt="Rose Quartz bracelet" loading="lazy" width="1000" height="1250"><span class="tag glass">Love</span></a>
-            <div class="product__meta">
-              <h3><a href="shop.html" style="color:inherit;text-decoration:none;">Rose Quartz Bracelet</a></h3>
-              <p>Rose quartz · gold-tone spacers</p><span class="price">₹1,599</span>
-            </div>
-            <div class="product__actions">
-              <button class="btn-cart" type="button" data-add-cart data-product-id="rose-quartz" data-product-title="Rose Quartz Bracelet" data-product-price="1599" data-product-img="assets/img/Rose Quartz Bracelet.webp">Add to bag</button>
-              <button class="btn-cart btn-cart--ghost" type="button" data-buy-now data-product-id="rose-quartz" data-product-title="Rose Quartz Bracelet" data-product-price="1599">Buy on WhatsApp</button>
-            </div>
-          </div>
-          <div class="product" data-reveal>
-            <a class="product__media" href="customize.html"><img src="assets/img/Rudraksha.avif" alt="Rudraksha mala with a gold-tone tassel" loading="lazy" width="1000" height="1250"><span class="tag glass">Devotion</span></a>
-            <div class="product__meta">
-              <h3><a href="customize.html" style="color:inherit;text-decoration:none;">Rudraksha Mala</a></h3>
-              <p>Rudraksha · gold-tone tassel</p><span class="price">₹2,499</span>
-            </div>
-            <div class="product__actions">
-              <button class="btn-cart" type="button" data-add-cart data-product-id="rudraksha-mala" data-product-title="Rudraksha Mala" data-product-price="2499" data-product-img="assets/img/Rudraksha.avif">Add to bag</button>
-              <button class="btn-cart btn-cart--ghost" type="button" data-buy-now data-product-id="rudraksha-mala" data-product-title="Rudraksha Mala" data-product-price="2499">Buy on WhatsApp</button>
+          <div class="signature__panel glass" data-reveal>
+            <p class="eyebrow">Atelier Prāṇa</p>
+            <h2 class="h2">Make a piece <em>your own.</em></h2>
+            <p>Choose your stones, arrange your bracelet, and fine-tune the fit in the interactive bracelet studio.</p>
+            <div class="hero__cta">
+              <a class="btn btn--solid" href="customize.html">Enter the studio</a>
+              <a class="btn btn--ghost" href="reviews.html#faq">How it works</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ CUSTOMIZE ============ -->
-    <section class="section" id="customize">
-      <div class="wrap">
-        <header class="section__head" data-reveal>
-          <p class="eyebrow">Customize</p>
-          <h2 class="h2">This page is under development</h2>
-        </header>
-      </div>
-    </section>
-
-    <!-- ============ STORY ============ -->
+    <!-- ============ BRAND INTRODUCTION ============ -->
     <section class="section story" id="story">
-      <div class="wrap">
-        <div class="story__top">
-          <div data-reveal>
-            <p class="eyebrow">Our story</p>
-            <h2 class="h2"><span class="sr-only">Prana</span><svg class="wm wm--h2" viewBox="0 0 240.50 87.75" aria-hidden="true" focusable="false"><use href="#prana-wordmark"/></svg> is the breath<br><em>beneath every moment.</em></h2>
-          </div>
-          <div class="story__text" data-reveal>
-            <p><span class="sr-only">Prana</span><svg class="wm wm--text" viewBox="0 0 240.50 87.75" aria-hidden="true" focusable="false"><use href="#prana-wordmark"/></svg> (<span lang="sa">प्राण</span>) is the Sanskrit word for breath and life force — the quiet energy under everything you do.</p>
-            <p>We make jewellery for people who want that awareness close at hand: pieces that look contemporary, feel considered, and give you a reason to pause. Not accessories to be saved for occasions, but companions for ordinary days.</p>
-          </div>
+      <div class="wrap story__top">
+        <div data-reveal>
+          <p class="eyebrow">Our story</p>
+          <h2 class="h2">A little more <em>intention.</em></h2>
         </div>
-
-        <div class="pillars">
-          <article class="pillar glass" data-reveal>
-            <span class="pillar__n">i</span>
-            <h3>Intention</h3>
-            <p>Every piece is designed around a single quality to carry, so what you wear says something you mean.</p>
-          </article>
-          <article class="pillar glass" data-reveal>
-            <span class="pillar__n">ii</span>
-            <h3>Craft</h3>
-            <p>Natural stones, chosen one by one and strung with care, finished with understated metalwork.</p>
-          </article>
-          <article class="pillar glass" data-reveal>
-            <span class="pillar__n">iii</span>
-            <h3>Calm</h3>
-            <p>Clean lines, soft colour and a considered weight. Made to settle you, not to shout.</p>
-          </article>
+        <div class="story__text" data-reveal>
+          <p>Prāṇa is the Sanskrit word for breath and life force. We make contemporary natural-stone jewellery as a quiet reminder to pause and carry meaning into ordinary days.</p>
+          <a class="link-arrow" href="story.html">Discover our story <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -288,17 +196,18 @@
       <nav aria-label="Shop">
         <h4>Shop</h4>
         <a href="index.html">Home</a>
-        <a href="collections.html">Collections</a>
+        <a href="shop.html">Shop</a>
         <a href="shop.html">Bracelets</a>
         <a href="shop.html">Malas</a>
         <a href="customize.html">Customize</a>
       </nav>
       <nav aria-label="Brand">
         <h4>Brand</h4>
-        <a href="story.html">Our story</a>
+        <a href="story.html">About Us</a>
         <a href="story.html">Intention &amp; craft</a>
         <a href="reviews.html">Customer Reviews</a>
-        <a href="mailto:hello@example.com">Contact</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html#faq">FAQ</a>
       </nav>
       <nav aria-label="Follow">
         <h4>Follow</h4>
@@ -313,4 +222,3 @@
   </footer>
 </body>
 </html>
-

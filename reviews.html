@@ -88,6 +88,10 @@
       color: var(--muted);
       margin: 0;
     }
+    @media (max-width: 560px) {
+      .reviews-grid { grid-template-columns: minmax(0, 1fr); }
+      .review-card { min-width: 0; padding-inline: 22px; }
+    }
   </style>
 </head>
 <body>
@@ -102,11 +106,11 @@
     </a>
     <nav class="nav__links" id="navLinks" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="collections.html">Collections</a>
       <a href="shop.html">Shop</a>
       <a href="customize.html">Customize</a>
-      <a href="story.html">Our story</a>
+      <a href="story.html">About Us</a>
       <a href="reviews.html" class="active">Reviews</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="nav__actions">
       <a class="nav__bag" href="shop.html" aria-label="Bag, 0 items">
@@ -218,6 +222,24 @@
         </div>
       </div>
     </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="wrap">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">Helpful answers</p>
+          <h2 class="h2">Frequently asked <em>questions.</em></h2>
+          <p class="section__sub">Need a hand with a piece or a custom design? <a href="contact.html">Contact us</a>.</p>
+        </header>
+        <div class="faq-list">
+          <details class="faq-item glass" data-reveal><summary>What does Prana make?</summary><p>Prana offers natural-stone bracelets and malas, organized around intentions such as Calm, Courage, Clarity, and Devotion. Visit the <a href="shop.html">Shop</a> to see the full collection.</p></details>
+          <details class="faq-item glass" data-reveal><summary>How can I customize a bracelet?</summary><p>In the <a href="customize.html">bracelet studio</a>, choose gemstones, arrange the strand, and adjust the bracelet size. The design summary updates as you make changes.</p></details>
+          <details class="faq-item glass" data-reveal><summary>How do I choose my bracelet size?</summary><p>Choose S, M, L, or XL in the bracelet studio. You can update the size whenever you need to.</p></details>
+          <details class="faq-item glass" data-reveal><summary>How do I place an order?</summary><p>Add a piece to your bag and use the checkout option to send your order details to the Prana team.</p></details>
+          <details class="faq-item glass" data-reveal><summary>Is shipping included?</summary><p>Free standard shipping and mindful packaging are included across India, as shown in the shopping bag.</p></details>
+          <details class="faq-item glass" data-reveal><summary>Where can I ask about care, availability, or an order?</summary><p>Send your question through the <a href="contact.html">Contact page</a> and continue the conversation with the Prana team.</p></details>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ============ FOOTER ============ -->
@@ -233,7 +255,7 @@
       <nav aria-label="Shop">
         <h4>Shop</h4>
         <a href="index.html">Home</a>
-        <a href="collections.html">Collections</a>
+        <a href="shop.html">Shop</a>
         <a href="shop.html">Bracelets</a>
         <a href="shop.html">Malas</a>
         <a href="customize.html">Customize</a>
@@ -243,7 +265,8 @@
         <a href="story.html">Our story</a>
         <a href="story.html">Intention &amp; craft</a>
         <a href="reviews.html">Customer Reviews</a>
-        <a href="mailto:hello@example.com">Contact</a>
+        <a href="contact.html">Contact</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <nav aria-label="Follow">
         <h4>Follow</h4>

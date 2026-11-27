@@ -4,18 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Customize — Prana</title>
-  <meta name="description" content="Design your own PRĀNA crystal bracelet.">
+  <meta name="description" content="Design your own PRĀNA crystal bracelet in our luxury interactive 3D studio.">
   <meta name="theme-color" content="#f2e9f8">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%2346255E'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23C687E3'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Three.js from reputable high-performance CDN for interactive 3D studio -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/crystal-assets.js"></script>
-  <script type="module" src="js/customize.js"></script>
+  <script type="module" src="js/main.js"></script>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><g id="glyph-0-0"><path d="M 4.890625 0 L 4.890625 -1.25 C 6.359375 -1.695312 7.363281 -2.65625 7.90625 -4.125 C 8.445312 -5.59375 8.71875 -8.269531 8.71875 -12.15625 L 8.71875 -54.875 C 8.71875 -58.832031 8.445312 -61.53125 7.90625 -62.96875 C 7.363281 -64.40625 6.359375 -65.347656 4.890625 -65.796875 L 4.890625 -67.03125 L 24.328125 -67.03125 C 30.960938 -67.03125 36.179688 -66.101562 39.984375 -64.25 C 43.785156 -62.40625 46.484375 -60.046875 48.078125 -57.171875 C 49.671875 -54.296875 50.46875 -51.296875 50.46875 -48.171875 C 50.46875 -41.785156 48.1875 -36.582031 43.625 -32.5625 C 39.0625 -28.539062 32.304688 -26.53125 23.359375 -26.53125 L 16.5625 -26.53125 L 16.5625 -12.15625 C 16.5625 -8.269531 16.832031 -5.59375 17.375 -4.125 C 17.925781 -2.65625 18.929688 -1.695312 20.390625 -1.25 L 20.390625 0 Z M 16.5625 -27.96875 L 23.171875 -27.96875 C 29.304688 -27.96875 33.984375 -29.5625 37.203125 -32.75 C 40.429688 -35.945312 42.046875 -40.351562 42.046875 -45.96875 C 42.046875 -49.414062 41.328125 -52.625 39.890625 -55.59375 C 38.453125 -58.5625 36.164062 -60.96875 33.03125 -62.8125 C 29.90625 -64.664062 25.757812 -65.59375 20.59375 -65.59375 C 19.945312 -65.59375 19.253906 -65.578125 18.515625 -65.546875 C 17.785156 -65.515625 17.132812 -65.46875 16.5625 -65.40625 Z M 16.5625 -27.96875 "/></g></defs></svg>
@@ -23,15 +25,15 @@
   <header class="nav glass" id="nav">
     <a class="nav__logo" href="index.html" aria-label="Prāṇa home">
       <img class="nav__mark" src="assets/logo/mark.png" alt="" width="708" height="444">
-      <svg class="wm nav__word" viewBox="0 0 240.50 87.75" aria-hidden="true" focusable="false"><use href="#prana-wordmark"/></svg>
+      <img class="wm nav__word" src="assets/logo/wordmark.svg" alt="">
     </a>
     <nav class="nav__links" id="navLinks" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="collections.html">Collections</a>
       <a href="shop.html">Shop</a>
       <a href="customize.html" class="active">Customize</a>
-      <a href="story.html">Our story</a>
+      <a href="story.html">About Us</a>
       <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="nav__actions">
       <a class="nav__bag" href="shop.html" aria-label="Bag, 0 items">
@@ -43,239 +45,296 @@
       </button>
     </div>
   </header>
+
   <main id="main">
     <section class="section cz-section">
       <div class="wrap">
         <header class="section__head cz-head text-center" data-hero>
-          <p class="eyebrow eyebrow--gold">Atelier Prāṇa</p>
-          <h1 class="h2">The Custom <em>Bracelet Studio.</em></h1>
-          <p class="section__sub cz-head__sub">Select authentic gemstones, sculpt your custom strand, and watch your creation come to life in the central atelier.</p>
+          <p class="eyebrow eyebrow--gold">Atelier Prāna · Bespoke Design Studio</p>
+          <h1 class="h2">Craft Your <em>Signature Bracelet.</em></h1>
+          <p class="section__sub cz-head__sub">Design in a live 3D studio: choose authentic gemstones, arrange the strand, set a wrist measurement, and save your composition in this browser.</p>
         </header>
 
-        <!-- Studio Master Grid -->
-        <div class="cz-studio-grid">
-          
-          <!-- LEFT COLUMN: Crystal Library & Selection -->
-          <aside class="cz-panel cz-panel--library" aria-label="Gemstone Library">
-            <div class="cz-panel__header">
-              <span class="cz-panel__eyebrow">Select Stones</span>
-              <h2 class="cz-panel__title">Crystal Library</h2>
-              <p class="cz-panel__hint">Tap or hover any crystal to inspect its properties and add it to your bracelet.</p>
-            </div>
+        <ol class="cz-steps" aria-label="Customization steps">
+          <li><a href="#czColControls"><span>01</span> Crystals</a></li>
+          <li><a href="#czCenterpiece"><span>02</span> Preview</a></li>
+          <li><a href="#czWristSlider"><span>03</span> Wrist fit</a></li>
+          <li><a href="#czStrand"><span>04</span> Arrange</a></li>
+          <li><a href="#czReview"><span>05</span> Review</a></li>
+        </ol>
 
-            <!-- Featured Trio Highlight -->
-            <div class="cz-featured-trio">
-              <span class="cz-featured-label">Signature Quartz Trio</span>
-              <div id="czFeaturedCrystals" class="cz-featured-grid"></div>
-            </div>
+        <div class="cz-studio-workspace" id="czStudioWorkspace">
+          <!-- LEFT: collection, materials, arrangement -->
+          <aside class="cz-col cz-col--controls" id="czColControls" aria-label="Customization controls">
+            <nav class="cz-panel-tab-nav" role="tablist" aria-label="Studio panels">
+              <button type="button" class="cz-tab-btn is-active" data-tab="gemstones" role="tab" aria-selected="true">Gemstones</button>
+              <button type="button" class="cz-tab-btn" data-tab="arrange" role="tab" aria-selected="false">Arrange</button>
+              <button type="button" class="cz-tab-btn" data-tab="materials" role="tab" aria-selected="false">Materials</button>
+            </nav>
 
-            <div class="cz-library-divider">
-              <span>All Gemstones</span>
-            </div>
-
-            <div class="cz-search-wrap">
-              <svg class="cz-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              <input type="search" id="czGemSearch" class="cz-search-input" placeholder="Search crystals & gemstones…" aria-label="Search gemstones">
-            </div>
-
-            <div id="czCatFilters" class="cz-cat-bar" role="tablist" aria-label="Gemstone Categories"></div>
-            
-            <div id="czGemList" class="cz-gems" role="region" aria-label="Gemstone Collection"></div>
-          </aside>
-
-          <!-- CENTER COLUMN: The Hero Bracelet Atelier Experience -->
-          <main class="cz-centerpiece" id="czCenterpiece" aria-label="Live Bracelet Studio Preview">
-            <div class="cz-pedestal">
-              <!-- Ambient Pedestal Halo -->
-              <div class="cz-pedestal__halo" aria-hidden="true"></div>
-              <div class="cz-pedestal__ring" aria-hidden="true"></div>
-
-              <!-- Main Interactive Bracelet Preview SVG -->
-              <div class="cz-svg-container" id="czSvgContainer">
-                <svg id="czSvg" viewBox="-440 -440 880 880" width="880" height="880" aria-label="Custom crystal bracelet live preview">
-                  <!-- Defs with realistic lighting, radial gradients & gemstone reflections are injected here -->
-                </svg>
-
-                <!-- Center Brand Medallion inside the bracelet loop -->
-                <div class="cz-medallion" id="czMedallion" aria-hidden="true">
-                  <img src="assets/logo/mark-dark.png" alt="" class="cz-medallion__mark" width="48" height="30">
-                  <span class="cz-medallion__text">PRĀṆA</span>
-                  <span class="cz-medallion__sub" id="czMedallionSub">Atelier</span>
+            <div class="cz-tab-content is-active" id="czTabPaneGemstones" role="tabpanel">
+              <div class="cz-bead-studio" id="czBeadStudio">
+                <div class="cz-bead-studio__head">
+                  <span class="cz-panel__eyebrow">Collection</span>
+                  <h2 class="cz-bead-studio__title">Bead library</h2>
+                  <p class="cz-bead-studio__sub">Select a stone to add it. The live preview updates immediately.</p>
                 </div>
-              </div>
-
-              <!-- Floating Pedestal Controls -->
-              <div class="cz-pedestal-toolbar">
-                <button type="button" id="czRotateToggle" class="cz-tool-btn is-active" aria-label="Pause or resume bracelet rotation" title="Toggle 360° display rotation">
-                  <svg class="cz-spin-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
-                  </svg>
-                  <span id="czRotateLabel">Rotating 360°</span>
-                </button>
-
-                <button type="button" id="czMacroToggle" class="cz-tool-btn" aria-label="Toggle close-up bead inspector" title="Toggle large close-up bead view">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/>
-                  </svg>
-                  <span id="czMacroLabel">Close-up</span>
-                </button>
-
-                <div class="cz-pedestal-meta">
-                  <span id="czCountPill" class="cz-meta-pill">
-                    <span id="czCount">0</span> beads
-                  </span>
-                  <span id="czRecCount" class="cz-meta-sub">Target: 21</span>
+                <div class="cz-search-wrap">
+                  <svg class="cz-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                  <input type="search" id="czGemSearch" class="cz-search-input" placeholder="Search crystals…" aria-label="Search gemstones">
                 </div>
+                <div id="czCatFilters" class="cz-cat-bar" role="tablist" aria-label="Gemstone categories"></div>
+                <div class="cz-gem-grid-header">
+                  <span class="cz-grid-count-note" id="czFilteredCountNote"></span>
+                </div>
+                <div id="czGemList" class="cz-gem-gallery" role="list" aria-label="Available beads"></div>
               </div>
             </div>
 
-            <!-- Strand Bead Arranger Strip -->
-            <div class="cz-strand-section">
+            <div class="cz-tab-content" id="czTabPaneArrange" role="tabpanel">
+              <div class="cz-manual-mode-banner">
+                <div class="cz-manual-mode-info">
+                  <span class="cz-manual-mode-title">Arrange your bracelet</span>
+                  <p class="cz-manual-mode-sub">Choose a bead below, then use the arrows to move it or × to remove it.</p>
+                </div>
+                <label class="cz-switch-label cz-switch-label--manual">
+                  <input type="checkbox" id="czManualModeToggle" class="cz-switch-input" checked>
+                  <span class="cz-switch-slider" aria-hidden="true"></span>
+                </label>
+              </div>
+              <div class="cz-insert-guide">
+                <span class="cz-insert-guide__badge" id="czInsertActiveGemBadge">Active gem</span>
+                <span>Pick a stone, then use + to place it exactly where you want.</span>
+              </div>
+              <div class="cz-arranger-tools">
+                <button type="button" id="czMirror" class="btn btn--ghost btn--xs" title="Mirror bead pattern">Mirror</button>
+                <button type="button" id="czReverse" class="btn btn--ghost btn--xs" title="Reverse sequence">Reverse</button>
+                <button type="button" id="czUndo" class="btn btn--ghost btn--xs" title="Undo">Undo</button>
+                <button type="button" id="czRedo" class="btn btn--ghost btn--xs" title="Redo">Redo</button>
+                <button type="button" id="czClear" class="btn btn--ghost btn--xs cz-btn--danger" title="Reset strand">Clear</button>
+              </div>
               <div class="cz-strand-head">
-                <h3 class="cz-strand-title">Strand Arrangement</h3>
-                <span class="cz-strand-subtitle">Drag or use arrows to rearrange bead sequence</span>
+                <h3 class="cz-strand-title">Strand <span id="czArrangerCount">0</span></h3>
               </div>
               <div id="czStrand" class="cz-strand"></div>
             </div>
 
-            <!-- Studio Actions Toolbar -->
-            <div class="cz-actions-bar">
-              <button id="czMirror" class="btn btn--ghost btn--sm" title="Mirror bead pattern symmetrically">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 18 4-4-4-4M10 6 6 10l4 4"/><line x1="12" x2="12" y1="2" y2="22"/></svg>
-                Mirror
-              </button>
-              <button id="czUndo" class="btn btn--ghost btn--sm" title="Undo last change">Undo</button>
-              <button id="czRedo" class="btn btn--ghost btn--sm" title="Redo change">Redo</button>
-              <button id="czClear" class="btn btn--ghost btn--sm" title="Reset all beads">Clear</button>
-              <button id="czSave" class="btn btn--ghost btn--sm" title="Save design to browser">Save</button>
-            </div>
-          </main>
-
-          <!-- RIGHT COLUMN: Selected Crystal Detail, Sizing & Checkout -->
-          <aside class="cz-panel cz-panel--specs" aria-label="Selected Crystal and Order Specifications">
-            
-            <!-- Selected Crystal Spotlight Showcase (Realistic Product Photograph) -->
-            <div class="cz-selected-crystal-spotlight" id="czSelectedSpotlight">
-              <span class="cz-panel__eyebrow">Active Selection</span>
-              <div class="cz-spotlight-card" id="czSpotlightCard">
-                <!-- Injected via customize.js with photographic crystal artwork -->
-              </div>
-            </div>
-
-            <div class="cz-panel__header" style="margin-top: 18px;">
-              <span class="cz-panel__eyebrow">Specifications</span>
-              <h2 class="cz-panel__title">Sizing & Order</h2>
-            </div>
-
-            <!-- Wrist Sizing Card -->
-            <div class="cz-spec-group">
-              <div class="cz-spec-label-row">
-                <label for="czWristSlider" class="cz-label">Wrist Circumference</label>
-                <div class="cz-unit-toggle">
-                  <label class="cz-unit-radio">
-                    <input type="radio" name="czUnit" id="czUnitCm" value="cm" checked>
-                    <span>cm</span>
-                  </label>
-                  <label class="cz-unit-radio">
-                    <input type="radio" name="czUnit" id="czUnitIn" value="in">
-                    <span>in</span>
-                  </label>
+            <div class="cz-tab-content" id="czTabPaneMaterials" role="tabpanel">
+              <div class="cz-material-group">
+                <h3 class="cz-material-title">Cord</h3>
+                <p class="cz-material-sub">Shown on the live bracelet. Cord finish does not change the listed price.</p>
+                <div class="cz-option-grid" id="czCordOptions" role="radiogroup" aria-label="Cord finish">
+                  <button type="button" class="cz-option-card is-active" data-cord="clear" aria-checked="true"><span class="cz-option-dot" style="background:#f1f5f9;border:1px solid #cbd5e1;"></span><span class="cz-option-meta"><strong>Clear elastic</strong><small>Nearly invisible</small></span></button>
+                  <button type="button" class="cz-option-card" data-cord="lavender" aria-checked="false"><span class="cz-option-dot" style="background:#a855f7;"></span><span class="cz-option-meta"><strong>Lavender silk</strong><small>Soft studio cord</small></span></button>
+                  <button type="button" class="cz-option-card" data-cord="gold" aria-checked="false"><span class="cz-option-dot" style="background:#e6c66a;"></span><span class="cz-option-meta"><strong>Gold thread</strong><small>Warm metallic tone</small></span></button>
                 </div>
               </div>
-
-              <div class="cz-slider-box">
-                <input type="range" id="czWristSlider" min="13" max="23" step="0.1" value="17" class="cz-range" aria-label="Wrist size slider">
-                <div class="cz-slider-inputs">
-                  <input type="number" id="czWristCm" step="0.1" value="17" class="cz-num-input" aria-label="Wrist measurement in cm">
-                  <span id="czWristInDisp" class="cz-sub-val">(6.7 in)</span>
+              <div class="cz-material-group">
+                <h3 class="cz-material-title">Metal accents</h3>
+                <p class="cz-material-sub">Applied when spacers are included.</p>
+                <div class="cz-option-grid" id="czMetalOptions" role="radiogroup" aria-label="Accent metal">
+                  <button type="button" class="cz-option-card is-active" data-metal="gold" aria-checked="true"><span class="cz-option-dot" style="background:#e6c66a;"></span><span class="cz-option-meta"><strong>Yellow gold</strong><small>Warm 18K tone</small></span></button>
+                  <button type="button" class="cz-option-card" data-metal="silver" aria-checked="false"><span class="cz-option-dot" style="background:#e4e4e7;"></span><span class="cz-option-meta"><strong>Sterling silver</strong><small>Cool polish</small></span></button>
+                  <button type="button" class="cz-option-card" data-metal="rosegold" aria-checked="false"><span class="cz-option-dot" style="background:#f472b6;"></span><span class="cz-option-meta"><strong>Rose gold</strong><small>Soft blush metal</small></span></button>
                 </div>
               </div>
-
-              <div class="cz-fit-row">
-                <label for="czFit" class="cz-fit-label">Comfort Fit:</label>
-                <select id="czFit" class="cz-select">
-                  <option value="snug">Snug (+0.5 cm)</option>
-                  <option value="comfortable" selected>Comfortable (+1.5 cm)</option>
-                  <option value="loose">Loose (+2.5 cm)</option>
+              <div class="cz-toggle-bar">
+                <label class="cz-switch-label">
+                  <input type="checkbox" id="czSpacerToggle" class="cz-switch-input">
+                  <span class="cz-switch-slider"></span>
+                  <span class="cz-switch-text">Include metal spacers (+₹199)</span>
+                </label>
+              </div>
+              <div class="cz-spec-card">
+                <div class="cz-spec-label-row">
+                  <span class="cz-spec-heading">Bead diameter</span>
+                  <span id="czBeadSizeLabel" class="cz-sub-val">Selected: 8 mm</span>
+                </div>
+                <div id="czBeadSizePills" class="cz-size-pills" role="radiogroup" aria-label="Bead diameter">
+                  <button type="button" class="cz-size-pill" data-size="6">6 mm</button>
+                  <button type="button" class="cz-size-pill is-active" data-size="8">8 mm</button>
+                  <button type="button" class="cz-size-pill" data-size="10">10 mm</button>
+                  <button type="button" class="cz-size-pill" data-size="12">12 mm</button>
+                  <button type="button" class="cz-size-pill" data-size="14">14 mm</button>
+                </div>
+                <select id="czSize" class="cz-select cz-hidden-select" aria-label="Bead diameter">
+                  <option value="6">6 mm</option>
+                  <option value="8" selected>8 mm</option>
+                  <option value="10">10 mm</option>
+                  <option value="12">12 mm</option>
+                  <option value="14">14 mm</option>
                 </select>
               </div>
-
-              <details class="cz-measure-details">
-                <summary class="cz-measure-summary">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                  How to measure your wrist
-                </summary>
-                <p class="cz-measure-text">Wrap a soft measuring tape or a strip of paper around your wrist where you normally wear bracelets. Mark the overlap point and measure against a ruler.</p>
-              </details>
             </div>
-
-            <!-- Bead Sizing Card -->
-            <div class="cz-spec-group">
-              <div class="cz-spec-label-row">
-                <label for="czSize" class="cz-label">Bead Diameter</label>
-                <span id="czBeadSizeLabel" class="cz-sub-val">Selected: 8 mm</span>
-              </div>
-              
-              <!-- Quick Diameter Selection Pills -->
-              <div id="czBeadSizePills" class="cz-size-pills" role="radiogroup" aria-label="Bead diameter quick selection">
-                <button type="button" class="cz-size-pill" data-size="6">6 mm</button>
-                <button type="button" class="cz-size-pill is-active" data-size="8">8 mm</button>
-                <button type="button" class="cz-size-pill" data-size="10">10 mm</button>
-                <button type="button" class="cz-size-pill" data-size="12">12 mm</button>
-                <button type="button" class="cz-size-pill" data-size="14">14 mm</button>
-              </div>
-
-              <select id="czSize" class="cz-select cz-select--full" aria-label="Bead diameter">
-                <option value="6">6 mm — Delicate & Subtle</option>
-                <option value="8" selected>8 mm — Signature Balance</option>
-                <option value="10">10 mm — Bold Statement</option>
-                <option value="12">12 mm — Prominent Luxury</option>
-                <option value="14">14 mm — Grand Centerpiece</option>
-              </select>
-            </div>
-
-            <!-- Live Summary Breakdown -->
-            <div class="cz-spec-group cz-spec-group--summary">
-              <h3 class="cz-summary-title">Design Summary</h3>
-              <div id="czSummary" class="cz-summary-list"></div>
-
-              <div class="cz-price-card">
-                <div class="cz-price-line">
-                  <span>Base Bracelet Core</span>
-                  <span>₹799</span>
-                </div>
-                <div class="cz-price-line">
-                  <span>Gemstone Additions</span>
-                  <span id="czBeadsPrice">₹0</span>
-                </div>
-                <div class="cz-price-line cz-price-line--total">
-                  <span>Total Crafting Price</span>
-                  <strong id="czTotalPrice" class="cz-total-num">₹799</strong>
-                </div>
-              </div>
-            </div>
-
-            <!-- Final Review & CTA -->
-            <div id="czReview" class="cz-review-wrap"></div>
           </aside>
 
+          <!-- CENTRE: 3D preview -->
+          <section class="cz-col cz-col--studio cz-centerpiece" id="czCenterpiece" aria-label="Interactive 3D bracelet studio">
+            <div class="cz-studio-topbar">
+              <div class="cz-studio-status">
+                <span class="cz-studio-live-indicator" id="czLiveIndicator"><span class="cz-pulse-dot"></span> 3D studio</span>
+                <span id="czCountPill" class="cz-meta-pill"><span id="czCount">0</span> <span id="czCountLabel">beads</span></span>
+                <span id="czRecCount" class="cz-meta-sub">Target: —</span>
+              </div>
+              <div class="cz-view-mode-bar" role="group" aria-label="Preview renderer">
+                <button type="button" class="cz-mode-pill is-active" id="czMode3D">3D</button>
+                <button type="button" class="cz-mode-pill" id="czModeSVG">Flat lay</button>
+              </div>
+            </div>
+
+            <div class="cz-preview-switch" role="group" aria-label="Design source">
+              <button type="button" class="cz-switch-btn cz-switch-btn--active" data-view="my" aria-pressed="true">My design</button>
+              <button type="button" class="cz-switch-btn" data-view="original" aria-pressed="false">Signature</button>
+            </div>
+
+            <div class="cz-pedestal" id="czPedestal">
+              <div class="cz-pedestal__halo" aria-hidden="true"></div>
+              <div class="cz-pedestal__ring" aria-hidden="true"></div>
+              <div class="cz-3d-stage" id="cz3DStage" aria-label="WebGL bracelet preview"></div>
+              <div class="cz-svg-container is-hidden" id="czSvgContainer">
+                <svg id="czSvg" viewBox="-440 -440 880 880" width="880" height="880" aria-label="Flat-lay bracelet preview"></svg>
+                <div class="cz-medallion" id="czMedallion" aria-hidden="true">
+                  <img src="assets/logo/mark-dark.png" alt="" class="cz-medallion__mark" width="48" height="30">
+                  <span class="cz-medallion__text">PRĀṆA</span>
+                  <span class="cz-medallion__sub">Atelier</span>
+                </div>
+              </div>
+              <p class="cz-stage-hint" id="czStageHint">Drag to rotate · scroll or pinch to zoom</p>
+            </div>
+
+            <div class="cz-pedestal-toolbar">
+              <button type="button" id="czRotateToggle" class="cz-tool-btn is-active" aria-pressed="true">
+                <svg class="cz-spin-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/></svg>
+                <span id="czRotateLabel">Rotating 360°</span>
+              </button>
+              <div class="cz-zoom-controls">
+                <button type="button" id="czZoomOut" class="cz-tool-btn cz-tool-btn--icon" aria-label="Zoom out">−</button>
+                <button type="button" id="czResetView" class="cz-tool-btn cz-tool-btn--icon" aria-label="Reset camera">↻</button>
+                <button type="button" id="czZoomIn" class="cz-tool-btn cz-tool-btn--icon" aria-label="Zoom in">+</button>
+              </div>
+            </div>
+
+            <div class="cz-center-ribbon">
+              <span class="cz-ribbon-label">Strand sequence</span>
+              <div class="cz-mini-strand-preview" id="czMiniStrand"></div>
+            </div>
+          </section>
+
+          <!-- RIGHT: summary, wrist, price, saved designs -->
+          <aside class="cz-col cz-col--summary cz-panel cz-panel--specs" aria-label="Live design summary">
+            <div class="cz-panel__header">
+              <span class="cz-panel__eyebrow">Live atelier</span>
+              <h2 class="cz-panel__title">Design summary</h2>
+            </div>
+
+            <div class="cz-spec-card cz-summary-config" id="czSummaryConfig">
+              <div class="cz-summary-config__row"><span>Base</span><strong>Bespoke Atelier Bracelet</strong></div>
+              <div class="cz-summary-config__row"><span>Beads</span><strong id="czSummaryBeadTotal">0</strong></div>
+              <div class="cz-summary-config__row"><span>Wrist</span><strong id="czSummaryWristLine">17.0 cm · Regular</strong></div>
+              <div class="cz-summary-config__row"><span>Materials</span><strong id="czSummaryMaterials">Clear elastic · Yellow gold</strong></div>
+              <button type="button" class="cz-edit-wrist-btn" id="czEditWristBtn">Edit wrist measurement</button>
+            </div>
+
+            <div class="cz-spec-card" id="czWristCard">
+              <div class="cz-spec-label-row">
+                <span class="cz-spec-heading">Choose your size</span>
+                <span class="cz-sub-val" id="czWristPresetLabel">M · Regular fit</span>
+              </div>
+              <div class="cz-wrist-presets" role="radiogroup" aria-label="Bracelet size">
+                <button type="button" class="cz-wrist-preset" data-wrist-cm="14" data-size-label="S">S</button>
+                <button type="button" class="cz-wrist-preset is-active" data-wrist-cm="16" data-size-label="M">M</button>
+                <button type="button" class="cz-wrist-preset" data-wrist-cm="18" data-size-label="L">L</button>
+                <button type="button" class="cz-wrist-preset" data-wrist-cm="20" data-size-label="XL">XL</button>
+              </div>
+              <p class="cz-fit-note">Choose the bracelet size that feels most comfortable. You can change it anytime.</p>
+            </div>
+
+            <div class="cz-spec-card cz-spec-card--list">
+              <span class="cz-spec-heading">Selected gemstones</span>
+              <div id="czSummary" class="cz-summary-list"></div>
+            </div>
+
+            <div class="cz-price-card">
+              <div class="cz-price-line"><span>Base atelier core &amp; cord</span><span>₹799</span></div>
+              <div class="cz-price-line"><span>Natural gemstones (<span id="czPriceBeadCount">0</span>)</span><span id="czBeadsPrice">₹0</span></div>
+              <div class="cz-price-line" id="czSpacerPriceLine" style="display:none;"><span>Metal spacers</span><span>₹199</span></div>
+              <div class="cz-price-line cz-price-line--total">
+                <div>
+                  <span class="cz-total-label">Estimated total</span>
+                  <small class="cz-total-shipping">From current configuration</small>
+                </div>
+                <strong id="czTotalPrice" class="cz-total-num">₹799</strong>
+              </div>
+            </div>
+
+            <div id="czReview" class="cz-review-wrap"></div>
+
+            <div class="cz-saved-designs-section" id="czSavedDesignsSection">
+              <div class="cz-saved-header">
+                <div>
+                  <span class="cz-panel__eyebrow">This browser</span>
+                  <h4 class="cz-saved-title">My designs</h4>
+                </div>
+                <button type="button" class="btn btn--ghost btn--xs" id="czSaveCurrentDesignBtn">Save current</button>
+              </div>
+              <p class="cz-saved-disclaimer">Saved on this device only. They are not synced across phones or computers.</p>
+              <div class="cz-saved-list" id="czSavedDesignsList"></div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
-    <!-- In-page luxury notification toast (no browser alerts) -->
     <div id="czToast" class="prana-toast" role="status" aria-live="polite"></div>
+    <div id="czGemInfoPop" class="cz-info-pop" hidden></div>
+    <div id="czSaveModal" class="cz-save-modal" hidden>
+      <div class="cz-save-modal__card" role="dialog" aria-labelledby="czSaveModalTitle" aria-modal="true">
+        <h3 id="czSaveModalTitle">Name this design</h3>
+        <p>It will be stored in this browser only.</p>
+        <label class="cz-save-modal__label" for="czSaveNameInput">Design name</label>
+        <input type="text" id="czSaveNameInput" class="cz-search-input" maxlength="48" autocomplete="off">
+        <div class="cz-save-modal__actions">
+          <button type="button" class="btn btn--ghost btn--sm" id="czSaveCancel">Cancel</button>
+          <button type="button" class="btn btn--solid btn--sm" id="czSaveConfirm">Save design</button>
+        </div>
+      </div>
+    </div>
   </main>
+
+  <!-- PRANA FOOTER -->
   <footer class="footer">
     <div class="wrap footer__grid">
       <div class="footer__brand">
         <a class="footer__logo" href="index.html" aria-label="Prana, back to top">
           <img class="footer__mark" src="assets/logo/mark-dark.png" alt="" width="708" height="444" loading="lazy">
-          <svg class="wm footer__word" viewBox="0 0 240.50 87.75" aria-hidden="true" focusable="false"><use href="#prana-wordmark"/></svg>
+          <img class="wm footer__word" src="assets/logo/wordmark.svg" alt="">
         </a>
         <p>Carry calm. Wear meaning.</p>
       </div>
+      <nav aria-label="Shop">
+        <h4>Shop</h4>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="shop.html">All pieces</a>
+        <a href="customize.html">Customize</a>
+      </nav>
+      <nav aria-label="Brand">
+        <h4>Brand</h4>
+        <a href="story.html">About Us</a>
+        <a href="reviews.html">Customer Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html#faq">FAQ</a>
+      </nav>
+      <nav aria-label="Follow">
+        <h4>Follow</h4>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      </nav>
+    </div>
+    <div class="wrap footer__base">
+      <span>© 2026 Prana. All rights reserved.</span>
+      <a href="#main">Back to top ↑</a>
     </div>
   </footer>
-  <!-- Studio dynamic elements will be injected via JS and styled via css/styles.css -->
+  <script src="js/customize.js"></script>
 </body>
 </html>

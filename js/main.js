@@ -13,6 +13,18 @@ const hasGsap = () => typeof window.gsap !== 'undefined';
 /* ---------- nav ---------- */
 function setupNav() {
   const nav = $('#nav'), toggle = $('#navToggle'), links = $('#navLinks');
+  if (!nav || !toggle || !links) return;
+
+  const file = location.pathname.split('/').pop() || 'index.html';
+  const activePage = file === 'product.html' ? 'shop.html' : file === 'calm.html' ? 'shop.html' : file;
+  links.querySelectorAll('a[href]').forEach((link) => {
+    const target = new URL(link.href, location.href).pathname.split('/').pop() || 'index.html';
+    const active = target === activePage;
+    link.classList.toggle('active', active);
+    if (active) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
+
   const onScroll = () => nav.classList.toggle('is-scrolled', scrollY > 24);
   onScroll();
   addEventListener('scroll', onScroll, { passive: true });
@@ -30,6 +42,8 @@ function setupNav() {
 /* ---------- animations ---------- */
 function heroIn() {
   if (!hasGsap() || reduceMotion) return;
+  const targets = $('[data-hero]');
+  if (!targets) return;
   gsap.from('[data-hero]', { y: 38, opacity: 0, duration: 1.2, ease: 'power3.out', stagger: 0.13, clearProps: 'transform,opacity' });
 }
 
@@ -38,16 +52,22 @@ function scrollEffects() {
   gsap.registerPlugin(ScrollTrigger);
 
   const items = gsap.utils.toArray('[data-reveal]');
-  gsap.set(items, { opacity: 0, y: 46 });
-  ScrollTrigger.batch(items, {
-    start: 'top 90%',
-    once: true,
-    onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 1.15, ease: 'power3.out', stagger: 0.12, overwrite: true, clearProps: 'transform,opacity' })
-  });
+  if (items.length) {
+    gsap.set(items, { opacity: 0, y: 46 });
+    ScrollTrigger.batch(items, {
+      start: 'top 90%',
+      once: true,
+      onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 1.15, ease: 'power3.out', stagger: 0.12, overwrite: true, clearProps: 'transform,opacity' })
+    });
+  }
 
   // gentle depth on the hero image
-  gsap.to('.arch img', { yPercent: -7, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-  gsap.to('.hero__mark', { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  if ($('.arch img') && $('.hero')) {
+    gsap.to('.arch img', { yPercent: -7, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  }
+  if ($('.hero__mark') && $('.hero')) {
+    gsap.to('.hero__mark', { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  }
 }
 
 /* ---------- intro orchestration ---------- */
