@@ -51,13 +51,37 @@ function scrollEffects() {
   if (!hasGsap() || !window.ScrollTrigger || reduceMotion) return;
   gsap.registerPlugin(ScrollTrigger);
 
-  const items = gsap.utils.toArray('[data-reveal]');
+  const revealSelector = [
+    '[data-reveal]',
+    '.section__head',
+    '.card',
+    '.product',
+    '.signature__media',
+    '.signature__panel',
+    '.story__top > *',
+    '.pillar',
+    '.review-card',
+    '.faq-item',
+    '.contact-layout > *',
+    '.product-detail > *',
+    '.cz-col'
+  ].join(',');
+  const items = [...new Set(gsap.utils.toArray(revealSelector))];
   if (items.length) {
-    gsap.set(items, { opacity: 0, y: 46 });
+    gsap.set(items, { opacity: 0, y: 32, scale: 0.985 });
     ScrollTrigger.batch(items, {
       start: 'top 90%',
       once: true,
-      onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 1.15, ease: 'power3.out', stagger: 0.12, overwrite: true, clearProps: 'transform,opacity' })
+      onEnter: (els) => gsap.to(els, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: 'back.out(1.25)',
+        stagger: 0.09,
+        overwrite: true,
+        clearProps: 'transform,opacity'
+      })
     });
   }
 
